@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'bootstrap3',
+    'django_summernote',
+
+    'encyclopedia'
 ]
 
 MIDDLEWARE = [
@@ -103,18 +108,30 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'cs'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Prague'
 
 USE_I18N = True
 
 USE_L10N = True
 
 USE_TZ = True
+# DATABASES = {
+#     'default': {
+#         'OPTIONS': {"charset": "utf8mb4", "init_command": "SET default_storage_engine=InnoDB",},
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': '',
+#         'USER': 'dan',
+#         'PASSWORD': 'daniking',
+#         'HOST': 'localhost',
+#     },
+# }
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
