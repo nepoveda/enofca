@@ -1,9 +1,17 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
 {% block content %}
-<div>
-    <a href="{% url 'encyclopedia:index' %}"> Domů </a>
-</div>
-<div>
-    <h1> {{ object.name }} </h1>
-     {{ object.info|safe }}
+<div class="container">
+    <div>
+        <a href="{% url 'encyclopedia:index' %}"> Domů </a>
+        <a href="{% url 'encyclopedia:strain-list' %}"> Zpět </a>
+    </div>
+    <div class="title-div">
+        <h3 class="tittle"> {{ object.name }} </h1>
+        <div class="tittle-style"></div>
+        <p>
+             {{ object.info|safe }}
+         </p>
+    </div>
 </div>
 {% endblock %}

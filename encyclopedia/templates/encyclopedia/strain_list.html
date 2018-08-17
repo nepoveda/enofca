@@ -1,9 +1,16 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block content %}
-<div>
-    {% for strain in object_list %}
-        <a href="{% url 'encyclopedia:strain' strain.id %}"> {{strain.name}} </a>
-    {% endfor %}
+<div class="banner-bottom-w3l">
+    <div class="container">
+        <div class="title-div">
+            <h3 class="tittle"> <span>S</span>trains in Alphabetical Order</h3>
+            <div class="tittle-style"></div>
+
+            {% for strain in object_list %}
+                <a href="{% url 'encyclopedia:strain' strain.id %}"> {{strain.name}} </a>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 {% endblock %}
