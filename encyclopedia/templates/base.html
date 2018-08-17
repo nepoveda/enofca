@@ -1,0 +1,476 @@
+{% load staticfiles %}
+{% load bootstrap3 %}
+<html class="computer" lang="en">
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#56D25B",
+      "text": "#ffffff"
+    },
+    "button": {
+      "background": "#3CF"
+    }
+  },
+  "showLink": false,
+  "theme": "edgeless",
+  "position": "bottom-right"
+})});
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121633073-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-121633073-1');
+</script>
+
+<head>
+<title>Encyclopedia of Cannabis</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="This is ENCYCLOPEDIA of CANNABIS. Looks like a common book. But tell me. Where you can find more than 1100 variety seeds from all the world? Information from more than 70 seed banks. Final product photos, effects, user ratings, genetics, price and much more." />
+<meta name="keywords" content="Encyclopedia of Cannabis, cannabis, weed seeds, marijuana, medical marijuana, medical weed, Amsterdam weed, encyclopedia, marijuana seeds"
+<meta name="revisit-after" content="7 days" />
+<meta name="robots" content="all" />
+<meta name="Copyright" content="Encyclopedia of Cannabis">
+<meta name="author" content="Webmaster27">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <link href="{% static 'layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all"> -->
+<link href="http://www.enofca.com/favicon.ico" rel="icon" type="image/x-icon" />
+<script>
+
+		addEventListener("load", function () {
+
+			setTimeout(hideURLbar, 0);
+
+		}, false);
+
+
+
+		function hideURLbar() {
+
+			window.scrollTo(0, 1);
+
+		}
+
+	</script>
+
+	<!--// Meta tag Keywords -->
+
+	<!-- css files -->
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+	<!-- Bootstrap-css -->
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
+
+	<!-- Style-css -->
+
+    <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+
+	<!-- Font-Awesome-Icons-css -->
+
+    <link href="{% static 'css/popuo-box.css' %}" rel="stylesheet" type="text/css" media="all" />
+
+	<!-- Popup css (for Video Popup) -->
+
+    <link rel="stylesheet" href="{% static 'css/lightbox.css' %}" type="text/css" media="all">
+
+	<!-- Lightbox css (for Projects) -->
+
+    <link rel="stylesheet" href="{% static 'css/flexslider.css' %}" type="text/css" media="screen" property="" />
+
+	<!-- Flexslider css (for Testimonials) -->
+
+	<!-- //css files -->
+
+	<!-- web-fonts -->
+
+	<link href="//fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+
+	<link href="//fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+	<link href="//fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+
+	<!-- //web-fonts -->
+
+<!--//Livechatoo.com START-code//-->
+<script type="text/javascript">
+(function() {
+  livechatooCmd = function() { livechatoo.embed.init({account : 'enofca', lang : 'en', side : 'left'}) };
+  var l = document.createElement('script'); l.type = 'text/javascript'; l.async = !0; l.src = '//app.livechatoo.com/js/web.min.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(l, s);
+})();
+</script>
+<!--//Livechatoo.com END-code//-->
+</head>
+<body>
+
+
+
+		  <!-- navigation -->
+
+			<div class="col-xs-2 menu">
+
+				<a href="" id="menuToggle">
+
+					<span class="navClosed"></span>
+
+				</a>
+
+				<nav>
+
+					<a href="https://encyclopedia-of-cannabis.webnode.cz/p/rajcata-kg/">Eshop</a>
+
+                    <a href="{% url 'encyclopedia:index' %}#">Home</a>
+
+                    <a href="{% url 'encyclopedia:index' %}#about" class="scroll">About Us</a>
+
+                    <a href="{% url 'encyclopedia:index' %}#team" class="scroll">Team</a>
+
+                    <a href="{% url 'encyclopedia:index' %}#projects" class="scroll">Projects</a>
+
+                    <a href="{% url 'encyclopedia:index' %}#contact" class="scroll">Contact Us</a>
+
+                    <a href="{% url 'encyclopedia:strain-list' %}">Strains</a>
+
+                    <a href="#">Other products</a>
+
+
+				</nav>
+
+		  </div>
+            {% block content %}
+
+            {% endblock %}
+
+	<!-- jquery -->
+
+    <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+
+	<!-- //jquery -->
+
+
+
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+
+	<!-- Necessary-JavaScript-File-For-Bootstrap -->
+
+
+
+	<!--  light box js -->
+
+    <script src="{% static 'js/lightbox-plus-jquery.min.js' %}"></script>
+
+	<!-- //light box js-->
+
+
+
+	<!-- stats numscroller-js-file -->
+
+    <script src="{% static 'js/numscroller-1.0.js' %}"></script>
+
+	<!-- //stats numscroller-js-file -->
+
+
+
+	<!-- Baneer-js -->
+
+    <script src="{% static 'js/responsiveslides.min.js' %}"></script>
+
+	<script>
+
+		// You can also use "$(window).load(function() {"
+
+		$(function () {
+
+			// Slideshow 4
+
+			$("#slider4").responsiveSlides({
+
+				auto: true,
+
+				pager: true,
+
+				nav: false,
+
+				speed: 500,
+
+				namespace: "callbacks",
+
+				before: function () {
+
+					$('.events').append("<li>before event fired.</li>");
+
+				},
+
+				after: function () {
+
+					$('.events').append("<li>after event fired.</li>");
+
+				}
+
+			});
+
+
+
+		});
+
+	</script>
+
+	<!-- //Baneer-js -->
+
+
+
+	<!-- navigation -->
+
+	<script>
+
+		(function ($) {
+
+			// Menu Functions
+
+			$(document).ready(function () {
+
+				$('#menuToggle').click(function (e) {
+
+					var $parent = $(this).parent('.menu');
+
+					$parent.toggleClass("open");
+
+					var navState = $parent.hasClass('open') ? "hide" : "show";
+
+					$(this).attr("title", navState + " navigation");
+
+					// Set the timeout to the animation length in the CSS.
+
+					setTimeout(function () {
+
+						console.log("timeout set");
+
+						$('#menuToggle > span').toggleClass("navClosed").toggleClass("navOpen");
+
+					}, 200);
+
+					e.preventDefault();
+
+				});
+
+			});
+
+		})(jQuery);
+
+	</script>
+
+	<!-- //navigation -->
+
+
+
+	<!-- pop-up(for video popup)-->
+
+    <script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+
+	<script>
+
+		$(document).ready(function () {
+
+			$('.popup-with-zoom-anim').magnificPopup({
+
+				type: 'inline',
+
+				fixedContentPos: false,
+
+				fixedBgPos: true,
+
+				overflowY: 'auto',
+
+				closeBtnInside: true,
+
+				preloader: false,
+
+				midClick: true,
+
+				removalDelay: 300,
+
+				mainClass: 'my-mfp-zoom-in'
+
+			});
+
+
+
+		});
+
+	</script>
+
+	<!-- //pop-up-box (syllabus section video)-->
+
+
+
+	<!-- video js (background) -->
+
+    <script src="{% static 'js/jquery.vide.min.js' %}"></script>
+
+	<!-- //video js (background) -->
+
+
+
+	<!-- smoothscroll -->
+
+    <script src="{% static 'js/SmoothScroll.min.js' %}"></script>
+
+	<!-- //smoothscroll -->
+
+
+
+	<!-- password-script -->
+
+	<script>
+
+		window.onload = function () {
+
+			document.getElementById("password1").onchange = validatePassword;
+
+			document.getElementById("password2").onchange = validatePassword;
+
+		}
+
+
+
+		function validatePassword() {
+
+			var pass2 = document.getElementById("password2").value;
+
+			var pass1 = document.getElementById("password1").value;
+
+			if (pass1 != pass2)
+
+				document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+
+			else
+
+				document.getElementById("password2").setCustomValidity('');
+
+			//empty string means no validation error
+
+		}
+
+	</script>
+
+	<!-- //password-script -->
+
+
+
+	<!-- start-smooth-scrolling -->
+
+    <script src="{% static 'js/move-top.js' %}"></script>
+
+    <script src="{% static 'js/easing.js' %}"></script>
+
+	<script>
+
+		jQuery(document).ready(function ($) {
+
+			$(".scroll").click(function (event) {
+
+				event.preventDefault();
+
+
+
+				$('html,body').animate({
+
+					scrollTop: $(this.hash).offset().top
+
+				}, 1000);
+
+			});
+
+		});
+
+	</script>
+
+	<!-- //end-smooth-scrolling -->
+
+
+
+	<!-- smooth scrolling-bottom-to-top -->
+
+	<script>
+
+		$(document).ready(function () {
+
+			/*
+
+				var defaults = {
+
+				containerID: 'toTop', // fading element id
+
+				containerHoverID: 'toTopHover', // fading element hover id
+
+				scrollSpeed: 1200,
+
+				easingType: 'linear'
+
+				};
+
+			*/
+
+			$().UItoTop({
+
+				easingType: 'easeOutQuart'
+
+			});
+
+		});
+
+	</script>
+
+	<a href="#" id="toTop" style="display: block;">
+
+		<span id="toTopHover" style="opacity: 1;"> </span>
+
+	</a>
+
+	<!-- //smooth scrolling-bottom-to-top -->
+
+
+
+	<!-- flexSlider (for testimonials) -->
+
+    <script defer src="{% static 'js/jquery.flexslider.js' %}"></script>
+
+	<script>
+
+		$(window).load(function () {
+
+			$('.flexslider').flexslider({
+
+				animation: "slide",
+
+				start: function (slider) {
+
+					$('body').removeClass('loading');
+
+				}
+
+			});
+
+		});
+
+	</script>
+
+	<!-- //flexSlider (for testimonials) -->
+
+
+
+	<!-- //js-scripts -->
+
+</body>
+
+</html>

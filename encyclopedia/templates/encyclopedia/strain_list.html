@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div>
+    {% for strain in object_list %}
+        <a href="{% url 'encyclopedia:strain' strain.id %}"> {{strain.name}} </a>
+    {% endfor %}
+</div>
+{% endblock %}

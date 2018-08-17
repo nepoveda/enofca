@@ -1,0 +1,9 @@
+{% block content %}
+<div>
+    <a href="{% url 'encyclopedia:index' %}"> Domů </a>
+</div>
+<div>
+    <h1> {{ object.name }} </h1>
+     {{ object.info|safe }}
+</div>
+{% endblock %}

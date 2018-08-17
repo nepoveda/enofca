@@ -4,20 +4,20 @@ from __future__ import unicode_literals
 from django                  import forms
 from django.contrib          import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models                 import Seed
+from .models                 import Strain
 
 
 # Register your models here.
-class  SeedForm(forms.ModelForm):
+class  StrainForm(forms.ModelForm):
 
     class Meta:
-        model = Seed
+        model = Strain
         fields = '__all__'
         widgets = {
             'name': forms.widgets.TextInput(attrs={'style': 'width:90%;'})
         }
 
-class SeedModelAdmin(SummernoteModelAdmin):
-    form = SeedForm
+class StrainModelAdmin(SummernoteModelAdmin):
+    form = StrainForm
 
-admin.site.register(Seed, SeedModelAdmin)
+admin.site.register(Strain, StrainModelAdmin)
