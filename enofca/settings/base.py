@@ -12,21 +12,30 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SECRET_KEY = '6w&bn0c!#=9uc31(no_$)0rx%vcxqdl*p-zohycllzw_w@majf'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
 ALLOWED_HOSTS = []
+DEBUG = False
 
+ROOT_URLCONF = 'enofca.urls'
+WSGI_APPLICATION = 'enofca.wsgi.application'
+
+# Internationalization
+# https://docs.djangoproject.com/en/1.11/topics/i18n/
+
+LANGUAGE_CODE = 'cs'
+TIME_ZONE = 'Europe/Prague'
+USE_I18N = True
+USE_L10N = True
+USE_TZ = True
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.11/howto/static-files/
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # Application definition
 
@@ -40,6 +49,7 @@ INSTALLED_APPS = [
 
     'bootstrap3',
     'django_summernote',
+    'django_extensions',
 
     'encyclopedia'
 ]
@@ -53,8 +63,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-ROOT_URLCONF = 'enofca.urls'
 
 TEMPLATES = [
     {
@@ -72,9 +80,6 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'enofca.wsgi.application'
-
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
@@ -84,7 +89,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -103,35 +107,3 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-
-# Internationalization
-# https://docs.djangoproject.com/en/1.11/topics/i18n/
-
-LANGUAGE_CODE = 'cs'
-
-TIME_ZONE = 'Europe/Prague'
-
-USE_I18N = True
-
-USE_L10N = True
-
-USE_TZ = True
-# DATABASES = {
-#     'default': {
-#         'OPTIONS': {"charset": "utf8mb4", "init_command": "SET default_storage_engine=InnoDB",},
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': '',
-#         'USER': 'dan',
-#         'PASSWORD': 'daniking',
-#         'HOST': 'localhost',
-#     },
-# }
-
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.11/howto/static-files/
-
-STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
