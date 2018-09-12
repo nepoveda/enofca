@@ -2531,5 +2531,12 @@ h5.small-title {
     }
 }
 
+.logo-image img{
+    width: 200px;
+}
+
+.progress {
+    margin-bottom: 0 !important;
+}
 
 /*--//responsive--*/

@@ -6,5 +6,5 @@ app_name = 'encyclopedia'
 urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'strains/$', views.StrainListView.as_view(), name="strain-list"),
-    url(r'strain/(?P<pk>[0-9]+)/$', views.StrainDeatailView.as_view(), name="strain"),
+    url(r'strains/(?P<pk>[0-9]+)/$', views.StrainDeatailView.as_view(), name="strain"),
 ]

@@ -1,17 +1,96 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block content %}
-<div class="container">
     <div>
         <a href="{% url 'encyclopedia:index' %}"> Domů </a>
         <a href="{% url 'encyclopedia:strain-list' %}"> Zpět </a>
     </div>
-    <div class="title-div">
-        <h3 class="tittle"> {{ object.name }} </h1>
-        <div class="tittle-style"></div>
-        <p>
-             {{ object.info|safe }}
-         </p>
+
+<div class="banner-bottom-w3l">
+
+    <div class="container">
+        <div class="title-div">
+            <h3 class="tittle"> {{ object.name }} </h3>
+
+            <div class="logo-image" align="center">
+                <image src="{{object.bank.logo.url}}">
+            </div>
+            <div class="tittle-style" align="center"></div>
+        </div>
     </div>
+</div>
+
+<div class="gallery-agile" id="">
+
+    <div class="gallery-agile-kmsrow">
+         {% for photo in photos %}
+			<div class="col-xs-3 gallery-agile-grids">
+				<div class="portfolio-hover">
+                        <a href="{{photo.photo.url}}" data-lightbox="example-set">
+                         <img src="{{photo.photo.url}}" alt="..." class="img-responsive zoom-img"> </a>
+                 </div>
+             </div>
+         {% endfor %}
+     </div>
+			<div class="clearfix"> </div>
+</div>
+
+
+<div class="banner-bottom-w3l">
+
+    <div class="container">
+        <!-- BASIC INFORMAITION -->
+        <div class="row" align="center">
+            <div class="title-div">
+                <h3 class="title" align="center"> Basic information </h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">
+                ACTIVE / SATIVA
+            </div>
+            <div class="col-md-6">
+                <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.sativa}}%;">{{object.sativa}}%</div>
+                 </div>
+             </div>
+         </div>
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">
+                PASSIVE / INDICA
+            </div>
+            <div class="col-md-6">
+                <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.medicinal_mixtures}}%;">{{object.medicinal_mixtures}}%</div>
+                 </div>
+             </div>
+         </div>
+        <!-- MEDICAL USE -->
+        <div class="row" align="center">
+            <div class="title-div">
+                <h3 class="title" align="center">MEDICAL USE</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">
+                MEDICAL MIXTURES
+            </div>
+            <div class="col-md-6">
+                <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.medicinal_mixtures}}%;">{{object.medicinal_mixtures}}%</div>
+                 </div>
+             </div>
+         </div>
+
+
+    </div>
+  </div>
+</div>
+</div>
 </div>
 {% endblock %}

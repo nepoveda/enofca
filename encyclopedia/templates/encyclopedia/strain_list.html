@@ -7,8 +7,13 @@
             <h3 class="tittle"> <span>S</span>trains in Alphabetical Order</h3>
             <div class="tittle-style"></div>
 
-            {% for strain in object_list %}
-                <a href="{% url 'encyclopedia:strain' strain.id %}"> {{strain.name}} </a>
+            {% for key, values in strains.items %}
+            <h4 class="tittle"> {{key|upper}} </h4>
+            <div>
+                {% for strain in values %}
+                    <a href="{% url 'encyclopedia:strain' strain.id %}"> {{strain.name}} </a>
+                {% endfor %}
+            </div>
             {% endfor %}
         </div>
     </div>
