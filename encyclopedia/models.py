@@ -13,29 +13,29 @@ class Strain(models.Model):
     webId = models.PositiveIntegerField()
 
     #basic information
-    sativa = models.PositiveSmallIntegerField()
-    indica = models.PositiveSmallIntegerField()
+    sativa = models.PositiveSmallIntegerField(blank=True, default=1)
+    indica = models.PositiveSmallIntegerField(blank=True, default=1)
 
     #effects
-    creativ = models.PositiveSmallIntegerField()
-    relax = models.PositiveSmallIntegerField()
-    communication = models.PositiveSmallIntegerField()
-    pozitiv_emotion = models.PositiveSmallIntegerField()
+    creativ = models.PositiveSmallIntegerField(blank=True, default=1)
+    relax = models.PositiveSmallIntegerField(blank=True, default=1)
+    communication = models.PositiveSmallIntegerField(blank=True, default=1)
+    pozitiv_emotion = models.PositiveSmallIntegerField(blank=True, default=1)
 
     #medical
-    medicinal_mixtures = models.PositiveSmallIntegerField()
-    anorexia = models.PositiveSmallIntegerField()
-    insomnia = models.PositiveSmallIntegerField()
-    pain = models.PositiveSmallIntegerField()
-    stress = models.PositiveSmallIntegerField()
-    depression = models.PositiveSmallIntegerField()
+    medicinal_mixtures = models.PositiveSmallIntegerField(blank=True, default=1)
+    anorexia = models.PositiveSmallIntegerField(blank=True, default=1)
+    insomnia = models.PositiveSmallIntegerField(blank=True, default=1)
+    pain = models.PositiveSmallIntegerField(blank=True, default=1)
+    stress = models.PositiveSmallIntegerField(blank=True, default=1)
+    depression = models.PositiveSmallIntegerField(blank=True, default=1)
 
     #negatives
-    dry_eyes = models.PositiveSmallIntegerField()
-    paranoia = models.PositiveSmallIntegerField()
-    dry_mouth = models.PositiveSmallIntegerField()
-    choding_feeling = models.PositiveSmallIntegerField()
-    headache = models.PositiveSmallIntegerField()
+    dry_eyes = models.PositiveSmallIntegerField(blank=True, default=1)
+    paranoia = models.PositiveSmallIntegerField(blank=True, default=1)
+    dry_mouth = models.PositiveSmallIntegerField(blank=True, default=1)
+    choding_feeling = models.PositiveSmallIntegerField(blank=True, default=1)
+    headache = models.PositiveSmallIntegerField(blank=True, default=1)
 
     def __str__(self):
         return '{} - {}'.format(self.name, self.webId)
