@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'bootstrap3',
     'django_summernote',
     'django_extensions',
+    'django_cleanup',
 
     'encyclopedia'
 ]
