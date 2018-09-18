@@ -11,9 +11,11 @@
         <div class="title-div">
             <h3 class="tittle"> {{ object.name }} </h3>
 
-            <!-- <div class="logo-image" align="center"> -->
-            <!--     <image src="{{object.bank.logo.url}}"> -->
-            <!-- </div> -->
+            {% if object.bank.logo.url %}
+            <div class="logo-image" align="center">
+                <image src="{{object.bank.logo.url}}">
+            </div>
+            {% endif %}
             <div class="tittle-style" align="center"></div>
         </div>
     </div>
