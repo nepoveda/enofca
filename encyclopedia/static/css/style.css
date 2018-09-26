@@ -2536,7 +2536,20 @@ h5.small-title {
 }
 
 .progress {
-    margin-bottom: 0 !important;
+    margin-bottom: 1% !important;
+}
+
+.progress-bar-success {
+    text-align: center;
+}
+
+.title-div-detail {
+    margin-bottom: 2%;
+    margin-top: 3%;
+}
+.back-button{
+    position: absolute;
+    top: 40px;
 }
 
 /*--//responsive--*/

@@ -65,6 +65,7 @@ window.cookieconsent.initialise({
 
 	<!-- css files -->
 
+    <link rel="stylesheet" href="{% static 'css/age-verification.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
 
 	<!-- Bootstrap-css -->
@@ -276,7 +277,7 @@ window.cookieconsent.initialise({
 	<!-- jquery -->
 
     <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 	<!-- //jquery -->
 
 
@@ -592,6 +593,7 @@ window.cookieconsent.initialise({
 
 
 	<!-- //js-scripts -->
+    <script defer src="{% static 'js/age-verification.js' %}"></script>
 
 </body>
 
