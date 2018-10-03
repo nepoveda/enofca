@@ -14,7 +14,8 @@ class  StrainForm(forms.ModelForm):
         model = Strain
         fields = '__all__'
         widgets = {
-            'name': forms.widgets.TextInput(attrs={'style': 'width:90%;'})
+            'name': forms.widgets.TextInput(attrs={'style': 'width:90%;'}),
+            'webId': forms.widgets.NumberInput()
         }
 
 class StrainPhotoModelAdmin(admin.ModelAdmin):

@@ -11,7 +11,7 @@
             <h4 class="tittle"> {{key|upper}} </h4>
             <div>
                 {% for strain in values %}
-                    <a href="{% url 'encyclopedia:strain' strain.id %}"> {{strain.name}} </a>
+                    <a href="{% url 'encyclopedia:strain' webId=strain.webId %}"> {{strain.name}} </a>
                 {% endfor %}
             </div>
             {% endfor %}

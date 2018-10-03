@@ -10,7 +10,7 @@ class Strain(models.Model):
     name = models.CharField(u'název', max_length=100)
     info = models.TextField(u'informace', blank=True)
     bank = models.ForeignKey('SeedBank', on_delete=models.SET_NULL, null=True, blank=True)
-    webId = models.PositiveIntegerField()
+    webId = models.SlugField(max_length=50, unique=True)
 
     #basic information
     sativa = models.PositiveSmallIntegerField(blank=True, default=1)
