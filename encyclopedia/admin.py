@@ -23,12 +23,17 @@ class StrainPhotoModelAdmin(admin.ModelAdmin):
 
 class StrainPhotoInline(admin.StackedInline):
     model = StrainPhoto
-    max_num = 5
+    max_num = 3
     extra = 3
 
 class StrainModelAdmin(SummernoteModelAdmin):
     form = StrainForm
     inlines = [StrainPhotoInline,]
+    search_fields = ('name', 'webId')
+
+class SeedBankModelAdmin(admin.ModelAdmin):
+    model = SeedBank
+    search_fields = ('name',)
 
 admin.site.register(Strain, StrainModelAdmin)
-admin.site.register(SeedBank)
+admin.site.register(SeedBank, SeedBankModelAdmin)

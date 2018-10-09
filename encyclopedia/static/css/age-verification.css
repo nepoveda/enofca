@@ -17,7 +17,9 @@
 }
 
 #modal_content {
-	position: fixed;
+	position: absolute;
+    top: 20px;
+    left: 8%;
 	z-index: 1101;
 	margin: 0 auto;
 	background-color:#fff;
@@ -39,7 +41,7 @@
 }
 
 #modal_content .content_wrapper {
-	/* padding-top: 8em; */
+	padding-top: 5em;
 	/* margin:3em auto 0; */
 	text-align: center;
 }
@@ -108,8 +110,8 @@
 @media (min-width: 688px) {
 	#modal_content {
 		top: 10em;
-		top: 30vh;
-		left: 30vw;
+		top: 10vh;
+		left: 15%;
 		width: 90%;
 		max-width: 500px;
 		height:500px;
@@ -121,7 +123,7 @@
 	}
 
 	#modal_content .content_wrapper {
-		padding-top: 100px;
+		/* padding-top: 100px; */
 		/* margin:3em auto 0; */
 		text-align: center;
 	}
