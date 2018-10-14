@@ -23,7 +23,7 @@ class StrainPhotoModelAdmin(admin.ModelAdmin):
 
 class StrainPhotoInline(admin.StackedInline):
     model = StrainPhoto
-    max_num = 3
+    max_num = 20
     extra = 3
 
 class StrainModelAdmin(SummernoteModelAdmin):
