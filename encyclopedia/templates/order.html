@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block head %}
+    {{form.media}}
+{% endblock %}
+{% block content %}
+<div class="banner-bottom-w3l">
+    <div class="container">
+        <div class="title-div">
+            <h3 class="tittle"> Order </h3>
+        </div>
+        <div class="row">
+            <form action="#" method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="col-sm-6">
+                        {{field.errors}}
+                        {{field.label_tag}}
+                    </div>
+                    <div class="col-sm-6">
+                        {{field}}
+                    </div>
+                {% endfor %}
+                <input type="submit" value="Send" />
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -124,13 +124,7 @@ window.cookieconsent.initialise({
 
                     <a href="{% url 'encyclopedia:index' %}#">Home</a>
 
-                    <a href="{% url 'encyclopedia:index' %}#about" class="scroll">About Us</a>
-
-                    <a href="{% url 'encyclopedia:index' %}#team" class="scroll">Team</a>
-
-                    <a href="{% url 'encyclopedia:index' %}#projects" class="scroll">Projects</a>
-
-                    <a href="{% url 'encyclopedia:index' %}#contact" class="scroll">Contact Us</a>
+                    <a href="{% url 'orders:order' %}#">Order</a>
 
                     <a href="{% url 'encyclopedia:strain-list' %}">Strains</a>
 
@@ -150,7 +144,7 @@ window.cookieconsent.initialise({
 
 		<div class="w3layouts-newsletter">
 
-			<div class="w3ls-social-icons-2">
+			<div class="w3ls-social-icons-2 col-xs-5">
 
 				<h3>Social Media</h3>
 
@@ -179,50 +173,13 @@ window.cookieconsent.initialise({
 				</a>
 
 			</div>
-
-			<div class="col-md-7 agileinfo-newsletter">
-
-				<h3>
-
-					<i class="fa fa-envelope" aria-hidden="true"></i>Newsletter</h3>
-
-				<form action="#" method="post">
-
-					<input type="email" placeholder="Enter Your Email" name="email" required>
-
-					<input type="submit" value="Subscribe">
-
-				</form>
-
-			</div>
-
-			<div class="clearfix"> </div>
-
-		</div>
-
-		<div class="container">
-
-			<div class="col-xs-3 logo2">
-
-				<h2>
-
-					<a href="index.html">
-
-						<span>En</span>cyclopedia
-
-						<span>of  Ca</span>nnabis</a>
-
-				</h2>
-
-			</div>
-
-			<div class="col-xs-9 ftr-menu">
+			<div class="col-xs-7 ftr-menu">
 
 				<ul>
 
 					<li>
 
-						<a href="index.html">Home</a>
+                        <a href="{% url 'encyclopedia:index' %}">Home</a>
 
 					</li>
 
@@ -234,15 +191,10 @@ window.cookieconsent.initialise({
 
 					<li>
 
-						<a class="scroll" href="#team">Team</a>
+						<a class="" href="https://www.facebook.com/viktorbrenek" target="_blank">Grafic section</a>
 
 					</li>
 
-					<li>
-
-						<a href="#projects" title="Pictures" class="scroll">Pictures</a>
-
-					</li>
 
 					<li>
 
@@ -253,6 +205,43 @@ window.cookieconsent.initialise({
 				</ul>
 
 			</div>
+
+			<!-- <div class="col-md-7 agileinfo-newsletter"> -->
+
+			<!-- 	<h3> -->
+
+			<!-- 		<i class="fa fa-envelope" aria-hidden="true"></i>Newsletter</h3> -->
+
+			<!-- 	<form action="#" method="post"> -->
+
+			<!-- 		<input type="email" placeholder="Enter Your Email" name="email" required> -->
+
+			<!-- 		<input type="submit" value="Subscribe"> -->
+
+			<!-- 	</form> -->
+
+			<!-- </div> -->
+
+			<!-- <div class="clearfix"> </div> -->
+
+		</div>
+
+		<div class="container">
+
+			<!-- <div class="col-xs-3 logo2"> -->
+
+			<!-- 	<h2> -->
+
+			<!-- 		<a href="index.html"> -->
+
+			<!-- 			<span>En</span>cyclopedia -->
+
+			<!-- 			<span>of  Ca</span>nnabis</a> -->
+
+			<!-- 	</h2> -->
+
+			<!-- </div> -->
+
 
 			<div class="clearfix"></div>
 
@@ -594,4 +583,6 @@ window.cookieconsent.initialise({
 
 </body>
 
+    {% block head %}
+    {% endblock %}
 </html>

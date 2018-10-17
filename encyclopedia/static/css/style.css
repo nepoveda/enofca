@@ -1226,15 +1226,12 @@ h5.small-title {
 .footer-bot {
     background: #232327;
     padding: 2em 0;
-    margin-top: 12em;
 }
 .w3ls-social-icons-2 {
     float: left;
-    width: 32%;
     background: #56d25b;
     padding: 60px 80px 60px 180px;
     text-align: right;
-    margin-top: -10em;
     border-radius: 0 15px 15px 0;
     -webkit-border-radius: 0 15px 15px 0;
     -o-border-radius:0 15px 15px 0;
@@ -1292,7 +1289,6 @@ h5.small-title {
     margin-right:20px;
 }
 .ftr-menu {
-    text-align: right;
     margin-top: 20px;
 }
 .agileinfo-newsletter input[type="email"] {
@@ -1430,9 +1426,9 @@ h5.small-title {
     .agileits-banner-info {
         margin-top: 20em;
     }
-    .w3ls-social-icons-2 {
-        width: 35%;
-    }
+    /* .w3ls-social-icons-2 { */
+    /*     width: 35%; */
+    /* } */
     .agileinfo-newsletter {
         width: 34%;
     }
@@ -1447,9 +1443,9 @@ h5.small-title {
     .contact_grids_info {
         width: 46%;
     }
-    .w3ls-social-icons-2 {
-        width: 37%;
-    }
+    /* .w3ls-social-icons-2 { */
+    /*     width: 37%; */
+    /* } */
 }
 @media(max-width: 1280px){
     .banner, .banner-2, .banner-3 {
@@ -1543,7 +1539,7 @@ h5.small-title {
         float: none;
     }
     .w3ls-social-icons-2 {
-        width: 44%;
+        /* width: 44%; */
         padding: 55px 80px;
     }
     .agileinfo-newsletter {
@@ -1696,9 +1692,9 @@ h5.small-title {
     .contact_grids_info p {
         font-size: 15px;
     }
-    .w3ls-social-icons-2 {
-        width: 46%;
-    }
+    /* .w3ls-social-icons-2 { */
+    /*     width: 46%; */
+    /* } */
     .footer-bot {
         margin-top: 10em;
     }
@@ -1757,7 +1753,7 @@ h5.small-title {
         min-height: 340px;
     }
     .w3ls-social-icons-2 {
-        width: 47%;
+        /* width: 47%; */
         padding: 55px 50px;
     }
 }
@@ -1963,7 +1959,7 @@ h5.small-title {
     }
     .w3ls-social-icons-2 {
         padding: 40px 30px;
-        width: 79%;
+        /* width: 79%; */
     }
     .agileinfo-newsletter {
         padding: 2em;
@@ -2146,7 +2142,7 @@ h5.small-title {
         font-size: 14px;
     }
     .w3ls-social-icons-2 {
-        width: 90%;
+        /* width: 90%; */
     }
     .ftr-menu ul li {
         margin: 0 10px;
@@ -2526,7 +2522,7 @@ h5.small-title {
         margin: 25px 0;
     }
     .w3ls-social-icons-2 {
-        width: 97%;
+        /* width: 97%; */
     }
     .agileinfo-newsletter h3 {
         font-size: 25px;
