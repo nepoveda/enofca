@@ -93,7 +93,7 @@ DATABASES = {
     }
 }
 
-GOOGLE_API_KEY = 'AIzaSyAxy3sAu7aJOb1xuPvXdzRSOPP0xQD2xvo'
+GOOGLE_API_KEY = 'AIzaSyASH12DCYLgdl84f877omW8r9cxV8vKaYw'
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
