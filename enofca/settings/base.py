@@ -111,3 +111,5 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+RECAPTCHA_PRIVATE_KEY = '6Lfa4XUUAAAAAAb1YsA3lXjdtWK5rM-mQ9W4tvPw'
+RECAPTCHA_PUBLIC_KEY = '6Lfa4XUUAAAAANVUjfK0Pl3VcUYH39uFB2sNFPNo'

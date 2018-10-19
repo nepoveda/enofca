@@ -8,3 +8,5 @@ pydash
 pytz
 django-cleanup
 django-address
+django-multi-captcha-admin
+django-recaptcha2
