@@ -601,7 +601,22 @@ h3.tittle {
 h3.tittle span {
     color: #56d25b;
 }
+h4.tittle {
+    color: #232323;
+    font-size: 38px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-decoration: underline;
+}
+h5.tittle {
+    color: #232323;
+    font-size: 22px;
+    letter-spacing: 1px;
+    text-decoration: underline;
+}
 .tittle-style {
+    margin-top: 1%;
+    margin-bottom: 2%;
     position: relative;
 }
 .tittle-style:before {
@@ -2566,6 +2581,17 @@ h5.small-title {
 .title-div-detail {
     margin-bottom: 2%;
     margin-top: 3%;
+}
+
+.history p{
+    width: 80%;
+    text-align: left;
+    margin: 15px 0 15px 0;
+    color: black;
+}
+
+.history-image{
+    margin-top: 2%;
 }
 
 /*--//responsive--*/

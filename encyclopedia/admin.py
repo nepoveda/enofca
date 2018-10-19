@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django                  import forms
 from django.contrib          import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models                 import Strain, SeedBank, StrainPhoto
+from encyclopedia.models                 import Strain, SeedBank, StrainPhoto, History
 
 
 # Register your models here.
@@ -35,5 +35,18 @@ class SeedBankModelAdmin(admin.ModelAdmin):
     model = SeedBank
     search_fields = ('name',)
 
+class  HistoryForm(forms.ModelForm):
+
+    class Meta:
+        model = Strain
+        fields = '__all__'
+        widgets = {
+            'text': forms.widgets.TextInput(attrs={'style': 'width:90%;'}),
+        }
+
+class HistoryModelAdmin(SummernoteModelAdmin):
+    form = HistoryForm
+
 admin.site.register(Strain, StrainModelAdmin)
 admin.site.register(SeedBank, SeedBankModelAdmin)
+admin.site.register(History, HistoryModelAdmin)

@@ -61,3 +61,22 @@ def strain_directory_upload(instance, filename):
 class StrainPhoto(models.Model):
     photo = models.ImageField(upload_to=strain_directory_upload)
     strain = models.ForeignKey('Strain', on_delete=models.SET_NULL, null=True, blank=True)
+
+HISTORY_CHOICES = (
+    ('1900', 'before 1900'),
+    ('2000', '1900 - 2000'),
+    ('now', '2000 - now'),
+)
+
+def history_upload_to(instance, filename):
+    return 'history/{0}/{1}/{2}'.format(instance.period, instance.header, filename)
+
+class History(models.Model):
+    period = models.CharField(max_length=10, choices = HISTORY_CHOICES)
+    header = models.CharField(max_length=100)
+    text = models.TextField()
+    image = models.ImageField(upload_to=history_upload_to, blank=True, null=True)
+    standing = models.PositiveSmallIntegerField()
+
+    def __str__(self):
+        return '{} - {}'.format(self.period, self.header)

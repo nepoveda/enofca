@@ -8,7 +8,7 @@
             <div class="tittle-style"></div>
 
             {% for key, values in strains.items %}
-            <h4 class="tittle"> {{key|upper}} </h4>
+            <h4 class="tittle" align="center"> {{key|upper}} </h4>
             <div>
                 {% for strain in values %}
                     <a href="{% url 'encyclopedia:strain' webId=strain.webId %}"> {{strain.name}} </a>
