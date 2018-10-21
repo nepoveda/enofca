@@ -13,30 +13,40 @@ class Strain(models.Model):
     revard = models.ForeignKey('Revard', on_delete=models.SET_NULL, null=True, blank=True)
     webId = models.SlugField(max_length=50, unique=True)
 
-    #basic information
-    sativa = models.PositiveSmallIntegerField(blank=True, default=1)
-    indica = models.PositiveSmallIntegerField(blank=True, default=1)
+    #medical
+    stress = models.PositiveSmallIntegerField(blank=True, default=0)
+    insomnia = models.PositiveSmallIntegerField(blank=True, default=0)
+    pain = models.PositiveSmallIntegerField(blank=True, default=0)
+    depression = models.PositiveSmallIntegerField(blank=True, default=0)
+    headaches = models.PositiveSmallIntegerField(blank=True, default=0)
+    lack_of_appetite = models.PositiveSmallIntegerField(blank=True, default=0)
+    muscle_spams = models.PositiveSmallIntegerField(blank=True, default=0)
+    nausea = models.PositiveSmallIntegerField(blank=True, default=0)
+    cramps = models.PositiveSmallIntegerField(blank=True, default=0)
+    fatigue = models.PositiveSmallIntegerField(blank=True, default=0)
+    inflammation = models.PositiveSmallIntegerField(blank=True, default=0)
 
     #effects
-    creativ = models.PositiveSmallIntegerField(blank=True, default=1)
-    relax = models.PositiveSmallIntegerField(blank=True, default=1)
-    communication = models.PositiveSmallIntegerField(blank=True, default=1)
-    pozitiv_emotion = models.PositiveSmallIntegerField(blank=True, default=1)
-
-    #medical
-    medicinal_mixtures = models.PositiveSmallIntegerField(blank=True, default=1)
-    anorexia = models.PositiveSmallIntegerField(blank=True, default=1)
-    insomnia = models.PositiveSmallIntegerField(blank=True, default=1)
-    pain = models.PositiveSmallIntegerField(blank=True, default=1)
-    stress = models.PositiveSmallIntegerField(blank=True, default=1)
-    depression = models.PositiveSmallIntegerField(blank=True, default=1)
+    communicative = models.PositiveSmallIntegerField(blank=True, default=0)
+    creative = models.PositiveSmallIntegerField(blank=True, default=0)
+    energetic = models.PositiveSmallIntegerField(blank=True, default=0)
+    euphoric = models.PositiveSmallIntegerField(blank=True, default=0)
+    focused = models.PositiveSmallIntegerField(blank=True, default=0)
+    happy = models.PositiveSmallIntegerField(blank=True, default=0)
+    relaxed = models.PositiveSmallIntegerField(blank=True, default=0)
+    uplifted = models.PositiveSmallIntegerField(blank=True, default=0)
+    talkative = models.PositiveSmallIntegerField(blank=True, default=0)
+    aroused = models.PositiveSmallIntegerField(blank=True, default=0)
+    giggly = models.PositiveSmallIntegerField(blank=True, default=0)
 
     #negatives
-    dry_eyes = models.PositiveSmallIntegerField(blank=True, default=1)
-    paranoia = models.PositiveSmallIntegerField(blank=True, default=1)
-    dry_mouth = models.PositiveSmallIntegerField(blank=True, default=1)
-    choding_feeling = models.PositiveSmallIntegerField(blank=True, default=1)
-    headache = models.PositiveSmallIntegerField(blank=True, default=1)
+    dry_eyes = models.PositiveSmallIntegerField(blank=True, default=0)
+    dry_mouth = models.PositiveSmallIntegerField(blank=True, default=0)
+    headache = models.PositiveSmallIntegerField(blank=True, default=0)
+    paranoid = models.PositiveSmallIntegerField(blank=True, default=0)
+    dizzy = models.PositiveSmallIntegerField(blank=True, default=0)
+    anxious = models.PositiveSmallIntegerField(blank=True, default=0)
+
 
     def __str__(self):
         return '{} - {}'.format(self.name, self.webId)
@@ -47,7 +57,7 @@ def seed_bank_upload(instance, filename):
 class SeedBank(models.Model):
     logo = models.ImageField(upload_to=seed_bank_upload, blank=True, null=True)
     name = models.CharField(max_length=100)
-    link = models.URLField(blank=True, null=True)
+    link = models.URLField(blank=True, null=True, default="#")
 
     def __str__(self):
         return '{}'.format(self.name)

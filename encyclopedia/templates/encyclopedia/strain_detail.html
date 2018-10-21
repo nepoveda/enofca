@@ -14,14 +14,18 @@
 
             {% if object.bank.logo.url and object.revard.logo %}
             <div class="logo-image col-sm-8" align="center">
-                <image src="{{object.bank.logo.url}}">
+                <a href="{{object.bank.link}}" target="_blank">
+                    <image src="{{object.bank.logo.url}}">
+                </a>
             </div>
             <div class="logo-image col-sm-4" align="center">
                 <image src="{{object.revard.logo.url}}">
             </div>
-            {% else %}
+            {% elif object.bank.logo %}
             <div class="logo-image" align="center">
-                <image src="{{object.bank.logo.url}}">
+                <a href="{{object.bank.link}}" target="_blank">
+                    <image src="{{object.bank.logo.url}}">
+                </a>
             </div>
             {% endif %}
         </div>
@@ -47,96 +51,113 @@
 <div class="banner-bottom-w3l">
 
     <div class="container">
-        <!-- BASIC INFORMAITION -->
-        <div class="row" align="center">
-            <div class="title-div-detail">
-                <h3 class="title" align="center"> BASIC INFORMAITION </h3>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-3"> ACTIVE / SATIVA </div>
-            <div class="col-md-6">
-                <div class="progress">
-                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.sativa}}%;">{{object.sativa}}%</div>
-                 </div>
-             </div>
-         </div>
-
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-3"> PASSIVE / INDICA </div>
-            <div class="col-md-6">
-                <div class="progress">
-                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.medicinal_mixtures}}%;">{{object.medicinal_mixtures}}%</div>
-                 </div>
-             </div>
-         </div>
-
         <!-- MEDICAL USE -->
         <div class="row" align="center">
             <div class="title-div-detail">
-                <h3 class="title" align="center">MEDICAL USE</h3>
+                <h3 class="title" align="center"> MEDICAL USE </h3>
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-3"> MEDICAL MIXTURES </div>
+            <div class="col-md-3">Stress</div>
             <div class="col-md-6">
                 <div class="progress">
-                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.medicinal_mixtures}}%;">{{object.medicinal_mixtures}}%</div>
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.stress}}%;">{{object.stress}}</div>
                  </div>
              </div>
          </div>
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-3"> ANOREXIA </div>
+            <div class="col-md-3">Insomnia</div>
             <div class="col-md-6">
                 <div class="progress">
-                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.anorexia}}%;">{{object.anorexia}}%</div>
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.insomnia}}%;">{{object.insomnia}}</div>
                  </div>
              </div>
          </div>
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-3">INSOMNIA</div>
+            <div class="col-md-3">Pain</div>
             <div class="col-md-6">
                 <div class="progress">
-                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.insomnia}}%;">{{object.insomnia}}%</div>
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.pain}}%;">{{object.pain}}</div>
                  </div>
              </div>
          </div>
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-3">PAIN</div>
+            <div class="col-md-3">Depression</div>
             <div class="col-md-6">
                 <div class="progress">
-                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.pain}}%;">{{object.pain}}%</div>
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.depression}}%;">{{object.depression}}</div>
                  </div>
              </div>
          </div>
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-3">STRESS</div>
+            <div class="col-md-3">Headaches</div>
             <div class="col-md-6">
                 <div class="progress">
-                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.stress}}%;">{{object.stress}}%</div>
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.headaches}}%;">{{object.headaches}}</div>
                  </div>
              </div>
          </div>
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-3">DEPRESION</div>
+            <div class="col-md-3">Lack of Appetite</div>
             <div class="col-md-6">
                 <div class="progress">
-                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.depression}}%;">{{object.depression}}%</div>
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.lack_of_appetite}}%;">{{object.lack_of_appetite}}</div>
+                 </div>
+             </div>
+         </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">Muscle Spams</div>
+            <div class="col-md-6">
+                <div class="progress">
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.muscle_spams}}%;">{{object.muscle_spams}}</div>
+                 </div>
+             </div>
+         </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">Nausea</div>
+            <div class="col-md-6">
+                <div class="progress">
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.nausea}}%;">{{object.nausea}}</div>
+                 </div>
+             </div>
+         </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">Cramps</div>
+            <div class="col-md-6">
+                <div class="progress">
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.cramps}}%;">{{object.cramps}}</div>
+                 </div>
+             </div>
+         </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">Fatigue</div>
+            <div class="col-md-6">
+                <div class="progress">
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.fatigue}}%;">{{object.fatigue}}</div>
+                 </div>
+             </div>
+         </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">Inflammation</div>
+            <div class="col-md-6">
+                <div class="progress">
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.inflammation}}%;">{{object.inflammation}}</div>
                  </div>
              </div>
          </div>
 
-        <!-- EFFECTS -->
         <div class="row" align="center">
             <div class="title-div-detail">
                 <h3 class="title" align="center">EFFECTS</h3>
@@ -144,92 +165,165 @@
         </div>
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-3">CREATIV</div>
+            <div class="col-md-3">Communicative</div>
             <div class="col-md-6">
                 <div class="progress">
-                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.creativ}}%;">{{object.creativ}}%</div>
-                  </div>
-              </div>
-          </div>
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.communicative}}%;">{{object.communicative}}</div>
+                 </div>
+             </div>
+         </div>
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-3">RELAX</div>
+            <div class="col-md-3">Creative</div>
             <div class="col-md-6">
                 <div class="progress">
-                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.relax}}%;">{{object.relax}}%</div>
-                  </div>
-              </div>
-          </div>
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.creative}}%;">{{object.creative}}</div>
+                 </div>
+             </div>
+         </div>
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-3">COMMUNICATION</div>
+            <div class="col-md-3">Energetic</div>
             <div class="col-md-6">
                 <div class="progress">
-                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.communication}}%;">{{object.communication}}%</div>
-                  </div>
-              </div>
-          </div>
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.energetic}}%;">{{object.energetic}}</div>
+                 </div>
+             </div>
+         </div>
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-3">POZITIV EMOTION</div>
+            <div class="col-md-3">Euphoric</div>
             <div class="col-md-6">
                 <div class="progress">
-                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.pozitiv_emotion}}%;">{{object.pozitiv_emotion}}%</div>
-                  </div>
-              </div>
-          </div>
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.euphoric}}%;">{{object.euphoric}}</div>
+                 </div>
+             </div>
+         </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">Focused</div>
+            <div class="col-md-6">
+                <div class="progress">
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.focused}}%;">{{object.focused}}</div>
+                 </div>
+             </div>
+         </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">Happy</div>
+            <div class="col-md-6">
+                <div class="progress">
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.happy}}%;">{{object.happy}}</div>
+                 </div>
+             </div>
+         </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">Relaxed</div>
+            <div class="col-md-6">
+                <div class="progress">
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.relaxed}}%;">{{object.relaxed}}</div>
+                 </div>
+             </div>
+         </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">Uplifted</div>
+            <div class="col-md-6">
+                <div class="progress">
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.uplifted}}%;">{{object.uplifted}}</div>
+                 </div>
+             </div>
+         </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">Talkative</div>
+            <div class="col-md-6">
+                <div class="progress">
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.talkative}}%;">{{object.talkative}}</div>
+                 </div>
+             </div>
+         </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">Aroused</div>
+            <div class="col-md-6">
+                <div class="progress">
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.aroused}}%;">{{object.aroused}}</div>
+                 </div>
+             </div>
+         </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">Giggly</div>
+            <div class="col-md-6">
+                <div class="progress">
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.giggly}}%;">{{object.giggly}}</div>
+                 </div>
+             </div>
+         </div>
 
-        <!-- NEGATIV -->
+
         <div class="row" align="center">
             <div class="title-div-detail">
-                <h3 class="title" align="center">NEGATIV</h3>
+                <h3 class="title" align="center">NEGATIVES</h3>
             </div>
         </div>
+
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-3">DRY / RED EYES</div>
+            <div class="col-md-3">Dry Eyes</div>
             <div class="col-md-6">
                 <div class="progress">
-                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.dry_eyes}}%;">{{object.dry_eyes}}%</div>
-                  </div>
-              </div>
-          </div>
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.dry_eyes}}%;">{{object.dry_eyes}}</div>
+                 </div>
+             </div>
+         </div>
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-3">PARANOIA</div>
+            <div class="col-md-3">Dry Mouth</div>
             <div class="col-md-6">
                 <div class="progress">
-                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.paranoia}}%;">{{object.paranoia}}%</div>
-                  </div>
-              </div>
-          </div>
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.dry_mouth}}%;">{{object.dry_mouth}}</div>
+                 </div>
+             </div>
+         </div>
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-3">DRY MOUTH</div>
+            <div class="col-md-3">Headache</div>
             <div class="col-md-6">
                 <div class="progress">
-                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.dry_mouth}}%;">{{object.dry_mouth}}%</div>
-                  </div>
-              </div>
-          </div>
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.headache}}%;">{{object.headache}}</div>
+                 </div>
+             </div>
+         </div>
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-3">CHODING FEELING</div>
+            <div class="col-md-3">Paranoid</div>
             <div class="col-md-6">
                 <div class="progress">
-                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.choding_feeling}}%;">{{object.choding_feeling}}%</div>
-                  </div>
-              </div>
-          </div>
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.paranoid}}%;">{{object.paranoid}}</div>
+                 </div>
+             </div>
+         </div>
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-3">HEADACHE</div>
+            <div class="col-md-3">Dizzy</div>
             <div class="col-md-6">
                 <div class="progress">
-                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.headache}}%;">{{object.headache}}%</div>
-                  </div>
-              </div>
-          </div>
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.dizzy}}%;">{{object.dizzy}}</div>
+                 </div>
+             </div>
+         </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">Anxious</div>
+            <div class="col-md-6">
+                <div class="progress">
+                      <div class="progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: {{object.anxious}}%;">{{object.anxious}}</div>
+                 </div>
+             </div>
+         </div>
 
     </div>
   </div>
