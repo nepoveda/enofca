@@ -10,13 +10,20 @@
     <div class="container">
         <div class="title-div">
             <h3 class="tittle"> {{ object.name }} </h3>
+            <div class="tittle-style" align="center"></div>
 
-            {% if object.bank.logo.url %}
+            {% if object.bank.logo.url and object.revard.logo %}
+            <div class="logo-image col-sm-8" align="center">
+                <image src="{{object.bank.logo.url}}">
+            </div>
+            <div class="logo-image col-sm-4" align="center">
+                <image src="{{object.revard.logo.url}}">
+            </div>
+            {% else %}
             <div class="logo-image" align="center">
                 <image src="{{object.bank.logo.url}}">
             </div>
             {% endif %}
-            <div class="tittle-style" align="center"></div>
         </div>
     </div>
 </div>
