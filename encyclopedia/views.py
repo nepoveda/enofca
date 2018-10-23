@@ -17,7 +17,9 @@ class StrainListView(ListView):
 
     def get_context_data(self, **kwargs):
         strains = Strain.objects.order_by('name').values('name', 'webId')
-        kwargs['strains'] = pydash.group_by(strains, lambda strain: strain['name'][0].lower() if strain['name'][0].isalpha() else '#')
+        strains = pydash.group_by(strains, lambda strain: strain['name'][0].lower() if strain['name'][0].isalpha() else '#')
+        print sorted(strains.items())
+        kwargs['strains'] = sorted(strains.items())
         return super(StrainListView, self).get_context_data(**kwargs)
 
 class StrainDeatailView(DetailView):

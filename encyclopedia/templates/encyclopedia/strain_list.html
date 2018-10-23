@@ -8,12 +8,12 @@
             <h3 class="tittle"> <span>S</span>trains in Alphabetical Order</h3>
             <div class="tittle-style"></div>
            <h3 class="choices" align="center">
-               {% for key, val in strains.items %}
+               {% for key, value in strains %}
                        <a class="choices-link" href="#{{key}}"> {{key|upper}} </a>
                {% endfor %}
            </h3>
 
-            {% for key, values in strains.items %}
+            {% for key, values in strains %}
             <h4 class="tittle" align="center" id="{{key}}"> {{key|upper}} </h4>
             <div>
                 {% for strain in values %}
@@ -22,6 +22,7 @@
             </div>
             {% endfor %}
         </div>
+        {{strains}}
     </div>
 </div>
 {% endblock %}
