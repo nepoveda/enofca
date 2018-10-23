@@ -2602,6 +2602,9 @@ h5.small-title {
     margin-top: 2%;
 }
 
+.choices{
+    margin-bottom: 2%;
+}
 .choices-link{
     margin-left: 3%;
     color: black;
@@ -2609,5 +2612,4 @@ h5.small-title {
 .choices-link:hover{
     color: black;
 }
-
 /*--//responsive--*/

@@ -6,7 +6,7 @@
         <div class="title-div">
             <h3 class="tittle"> <span>S</span>trains in Alphabetical Order</h3>
             <div class="tittle-style"></div>
-           <h3 align="center">
+           <h3 class="choices" align="center">
                {% for key, val in strains.items %}
                        <a class="choices-link" href="#{{key}}"> {{key|upper}} </a>
                {% endfor %}
