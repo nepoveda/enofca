@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load order %}
 {% block content %}
 <div class="banner-bottom-w3l">
     <div class="container">
@@ -16,7 +17,7 @@
             <h4 class="tittle" align="center" id="{{key}}"> {{key|upper}} </h4>
             <div>
                 {% for strain in values %}
-                    <a href="{% url 'encyclopedia:strain' webId=strain.webId %}"> {{strain.name}} </a>
+                    <a href="{% url 'encyclopedia:strain' webId=strain.webId %}"> {{strain.name}} </a>,
                 {% endfor %}
             </div>
             {% endfor %}
