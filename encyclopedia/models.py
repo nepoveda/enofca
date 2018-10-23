@@ -62,8 +62,12 @@ class SeedBank(models.Model):
     def __str__(self):
         return '{}'.format(self.name)
 
+#odstarnit poté z migrací
 def revard_upload(instance, filename):
     return 'revards/{0}/{1}'.format(instance.name, filename)
+
+def cup_upload(instance, filename):
+    return 'cups/{0}/{1}'.format(instance.name, filename)
 
 class Revadr(models.Model):
     pass
@@ -75,7 +79,7 @@ class Cup(models.Model):
 
 class CupPhoto(models.Model):
     cup = models.ForeignKey('Cup', on_delete=models.SET_NULL, null=True, blank=True)
-    logo = models.ImageField(upload_to=revard_upload, blank=True, null=True)
+    logo = models.ImageField(upload_to=cup_upload, blank=True, null=True)
 
 def strain_directory_upload(instance, filename):
     return 'strains/{0}/{1}'.format(instance.strain.name, filename)
