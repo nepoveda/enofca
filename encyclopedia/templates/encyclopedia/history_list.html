@@ -7,9 +7,15 @@
             <h3 class="tittle"> <span>H</span>istory</h3>
             <div class="tittle-style"></div>
 
+           <h3 align="center">
+               {% for key, val in historys.items %}
+                       <a class="choices-link" href="#{{key}}"> {{key|upper}} </a>
+               {% endfor %}
+           </h3>
+
         </div>
             {% for key, values in historys.items %}
-            <h4 class="tittle"> {{key|upper}} </h4>
+            <h4 class="tittle" id="{{key}}"> {{key|upper}} </h4>
             <div class="history">
                 {% for history in values %}
                     <div class="row">

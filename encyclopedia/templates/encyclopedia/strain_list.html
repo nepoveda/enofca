@@ -6,9 +6,14 @@
         <div class="title-div">
             <h3 class="tittle"> <span>S</span>trains in Alphabetical Order</h3>
             <div class="tittle-style"></div>
+           <h3 align="center">
+               {% for key, val in strains.items %}
+                       <a class="choices-link" href="#{{key}}"> {{key|upper}} </a>
+               {% endfor %}
+           </h3>
 
             {% for key, values in strains.items %}
-            <h4 class="tittle" align="center"> {{key|upper}} </h4>
+            <h4 class="tittle" align="center" id="{{key}}"> {{key|upper}} </h4>
             <div>
                 {% for strain in values %}
                     <a href="{% url 'encyclopedia:strain' webId=strain.webId %}"> {{strain.name}} </a>

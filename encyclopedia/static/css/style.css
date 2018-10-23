@@ -609,6 +609,13 @@ h4.tittle {
     text-decoration: underline;
     margin-bottom: 2%;
 }
+h4.history {
+    color: #232323;
+    font-size: 38px;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 2%;
+}
 h5.tittle {
     color: #232323;
     font-size: 22px;
@@ -2593,6 +2600,14 @@ h5.small-title {
 
 .history-image{
     margin-top: 2%;
+}
+
+.choices-link{
+    margin-left: 3%;
+    color: black;
+}
+.choices-link:hover{
+    color: black;
 }
 
 /*--//responsive--*/
