@@ -12,7 +12,11 @@ class  StrainForm(forms.ModelForm):
 
     class Meta:
         model = Strain
-        fields = '__all__'
+        fields = ('name', 'webId', 'info', 'bank', 'cup', 'stress', 'insomnia', 'pain',
+                  'depression', 'headaches', 'lack_of_appetite', 'muscle_spams', 'nausea', 'cramps',
+                  'fatigue', 'inflammation', 'communicative', 'creative', 'energetic',  'euphoric',
+                  'focused', 'happy', 'relaxed', 'uplifted', 'talkative', 'aroused', 'giggly',
+                  'dry_eyes', 'dry_mouth', 'headache', 'paranoid', 'dizzy', 'anxious')
         widgets = {
             'name': forms.widgets.TextInput(attrs={'style': 'width:90%;'}),
             'webId': forms.widgets.NumberInput()
