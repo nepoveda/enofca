@@ -607,7 +607,8 @@ h4.tittle {
     text-align: center;
     letter-spacing: 1px;
     text-decoration: underline;
-    margin-bottom: 2%;
+    margin-top: 2%;
+    margin-bottom: 1%;
 }
 h4.history {
     color: #232323;
