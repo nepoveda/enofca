@@ -10,7 +10,7 @@ class Strain(models.Model):
     name = models.CharField(u'název', max_length=100)
     info = models.TextField(u'informace', blank=True)
     bank = models.ForeignKey('SeedBank', on_delete=models.SET_NULL, null=True, blank=True)
-    revard = models.ForeignKey('Revard', on_delete=models.SET_NULL, null=True, blank=True)
+    cup = models.ForeignKey('Cup', on_delete=models.SET_NULL, null=True, blank=True)
     webId = models.SlugField(max_length=50, unique=True)
 
     #medical
@@ -65,12 +65,17 @@ class SeedBank(models.Model):
 def revard_upload(instance, filename):
     return 'revards/{0}/{1}'.format(instance.name, filename)
 
-class Revard(models.Model):
+class Revadr(models.Model):
+    pass
+class Cup(models.Model):
     name = models.CharField(max_length=100)
-    logo = models.ImageField(upload_to=revard_upload, blank=True, null=True)
 
     def __str__(self):
         return '{}'.format(self.name)
+
+class CupPhoto(models.Model):
+    cup = models.ForeignKey('Cup', on_delete=models.SET_NULL, null=True, blank=True)
+    logo = models.ImageField(upload_to=revard_upload, blank=True, null=True)
 
 def strain_directory_upload(instance, filename):
     return 'strains/{0}/{1}'.format(instance.strain.name, filename)

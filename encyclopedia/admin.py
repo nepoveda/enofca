@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django                  import forms
 from django.contrib          import admin
 from django_summernote.admin import SummernoteModelAdmin
-from encyclopedia.models                 import Strain, SeedBank, StrainPhoto, History, Revard
+from encyclopedia.models                 import Strain, SeedBank, StrainPhoto, History, Cup, CupPhoto
 
 
 # Register your models here.
@@ -31,12 +31,26 @@ class StrainModelAdmin(SummernoteModelAdmin):
     inlines = [StrainPhotoInline,]
     search_fields = ('name', 'webId')
 
+class  CupForm(forms.ModelForm):
+
+    class Meta:
+        model = Cup
+        fields = '__all__'
+
+class CupPhotoModelAdmin(admin.ModelAdmin):
+    pass
+
+class CupPhotoInline(admin.StackedInline):
+    model = CupPhoto
+    max_num = 20
+    extra = 3
+
+class CupModelAdmin(admin.ModelAdmin):
+    form = CupForm
+    inlines = [CupPhotoInline,]
+
 class SeedBankModelAdmin(admin.ModelAdmin):
     model = SeedBank
-    search_fields = ('name',)
-
-class RevardModelAdmin(admin.ModelAdmin):
-    model = Revard
     search_fields = ('name',)
 
 class  HistoryForm(forms.ModelForm):
@@ -54,4 +68,4 @@ class HistoryModelAdmin(SummernoteModelAdmin):
 admin.site.register(Strain, StrainModelAdmin)
 admin.site.register(SeedBank, SeedBankModelAdmin)
 admin.site.register(History, HistoryModelAdmin)
-admin.site.register(Revard, RevardModelAdmin)
+admin.site.register(Cup, CupModelAdmin)
