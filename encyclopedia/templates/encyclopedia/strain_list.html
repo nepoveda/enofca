@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block content %}
+
 <div class="banner-bottom-w3l">
     <div class="container">
         <div class="title-div">
@@ -16,7 +17,7 @@
             <h4 class="tittle" align="center" id="{{key}}"> {{key|upper}} </h4>
             <div>
                 {% for strain in values %}
-                    <a href="{% url 'encyclopedia:strain' webId=strain.webId %}"> {{strain.name}} </a>{% if not forloop.last %},{% endif %}
+                    <a class="strains-link"  href="{% url 'encyclopedia:strain' webId=strain.webId %}"> {{strain.name}}</a>{% if not forloop.last %} | {% endif %}
                 {% endfor %}
             </div>
             {% endfor %}

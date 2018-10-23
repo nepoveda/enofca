@@ -2612,4 +2612,11 @@ h5.small-title {
 .choices-link:hover{
     color: black;
 }
+
+.strains-link{
+  color: black;
+}
+.strains-link:hover{
+  color: black;
+}
 /*--//responsive--*/
