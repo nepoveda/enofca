@@ -2581,10 +2581,26 @@ h5.small-title {
 
 .progress {
     margin-bottom: 1% !important;
+    height: 30px;
+}
+.progress-bar {
+    text-align: left;
+    color: white;
+    font-size: 130%;
+    line-height: 30px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding-left: 1em;
 }
 
-.progress-bar-success {
-    text-align: center;
+.health{
+    background-color: #1BBC36;
+}
+.negatives{
+    background-color: #BC3535;
+}
+.effects{
+    background-color: #C10FC1;
 }
 
 .title-div-detail {
