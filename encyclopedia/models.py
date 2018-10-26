@@ -67,10 +67,11 @@ def revard_upload(instance, filename):
     return 'revards/{0}/{1}'.format(instance.name, filename)
 
 def cup_upload(instance, filename):
-    return 'cups/{0}/{1}'.format(instance.name, filename)
+    return 'cups/{0}/{1}'.format(instance.cup.name, filename)
 
 class Revadr(models.Model):
     pass
+
 class Cup(models.Model):
     name = models.CharField(max_length=100)
 
