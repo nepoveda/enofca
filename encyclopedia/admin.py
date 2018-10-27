@@ -46,8 +46,8 @@ class CupPhotoModelAdmin(admin.ModelAdmin):
 
 class CupPhotoInline(admin.StackedInline):
     model = CupPhoto
-    max_num = 20
-    extra = 3
+    max_num = 2
+    extra = 2
 
 class CupModelAdmin(admin.ModelAdmin):
     form = CupForm

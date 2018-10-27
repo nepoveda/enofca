@@ -12,12 +12,28 @@
             <h3 class="tittle"> {{ object.name }} </h3>
             <div class="tittle-style" align="center"></div>
 
-            {% if object.bank.logo.url and object.revard.logo %}
-            <div class="logo-image col-sm-8" align="center">
-                <a href="{{object.bank.link}}" target="_blank">
-                    <image src="{{object.bank.logo.url}}">
-                </a>
-            </div>
+            {% if cups.count == 2 %}
+                <div class="logo-image col-sm-4" align="center">
+                    <a href="{{object.bank.link}}" target="_blank">
+                        <image src="{{object.bank.logo.url}}">
+                    </a>
+                </div>
+                {% for cup in cups %}
+                <div class="logo-image col-sm-4" align="center">
+                        <image src="{{cup.logo.url}}">
+                </div>
+                {% endfor %}
+            {% elif cups.count == 1 %}
+                <div class="logo-image col-sm-8" align="center">
+                    <a href="{{object.bank.link}}" target="_blank">
+                        <image src="{{object.bank.logo.url}}">
+                    </a>
+                </div>
+                {% for cup in cups %}
+                <div class="logo-image col-sm-4" align="center">
+                        <image src="{{cup.logo.url}}">
+                </div>
+                {% endfor %}
             {% elif object.bank.logo %}
             <div class="logo-image" align="center">
                 <a href="{{object.bank.link}}" target="_blank">

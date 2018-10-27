@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from django.views.generic.base import TemplateView
 
-from .models import Strain, StrainPhoto, History, HISTORY_CHOICES
+from .models import Strain, StrainPhoto, History, HISTORY_CHOICES, CupPhoto
 import pydash
 
 # Create your views here.
@@ -18,7 +18,6 @@ class StrainListView(ListView):
     def get_context_data(self, **kwargs):
         strains = Strain.objects.order_by('name').values('name', 'webId')
         strains = pydash.group_by(strains, lambda strain: strain['name'][0].lower() if strain['name'][0].isalpha() else '#')
-        print sorted(strains.items())
         kwargs['strains'] = sorted(strains.items())
         return super(StrainListView, self).get_context_data(**kwargs)
 
@@ -30,7 +29,9 @@ class StrainDeatailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(StrainDeatailView, self).get_context_data(**kwargs)
-        context['photos'] = StrainPhoto.objects.filter(strain=self.get_object())
+        strain = self.get_object()
+        context['photos'] = StrainPhoto.objects.filter(strain=strain)
+        context['cups'] = CupPhoto.objects.filter(cup=strain.cup)
         return context
 
 class HistoryListView(ListView):
