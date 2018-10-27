@@ -96,7 +96,7 @@ HISTORY_CHOICES = (
 )
 
 def history_upload_to(instance, filename):
-    return 'history/{0}/{1}/{2}'.format(instance.period, instance.header, filename)
+    return 'history/{0}/{1}'.format(instance.period, filename)
 
 class History(models.Model):
     period = models.CharField(max_length=10, choices = HISTORY_CHOICES)
