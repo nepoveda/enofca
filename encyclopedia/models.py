@@ -57,7 +57,7 @@ def seed_bank_upload(instance, filename):
 class SeedBank(models.Model):
     logo = models.ImageField(upload_to=seed_bank_upload, blank=True, null=True)
     name = models.CharField(max_length=100)
-    link = models.CharField(max_length=300, blank=True, null=True, default="#")
+    link = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return '{}'.format(self.name)
