@@ -103,6 +103,7 @@ class History(models.Model):
     header = models.CharField(max_length=100)
     text = models.TextField()
     image = models.ImageField(upload_to=history_upload_to, blank=True, null=True)
+    pdf = models.FileField(upload_to=history_upload_to, blank=True, null=True)
     standing = models.PositiveSmallIntegerField()
 
     def __str__(self):

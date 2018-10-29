@@ -29,6 +29,18 @@
                             </div>
                         {% endif %}
                     </div>
+                    <hr>
+                    {% if history.pdf %}
+                        <div class="row history-pdf">
+                            <p>
+                                <b>Download:</b>
+                                <a href="{{history.pdf.url}}">
+                                    PDF
+                                </a>
+                            </p>
+                        </div>
+                        <hr>
+                    {% endif %}
                 {% endfor %}
             </div>
             {% endfor %}

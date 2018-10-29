@@ -622,6 +622,7 @@ h5.tittle {
     font-size: 22px;
     letter-spacing: 1px;
     text-decoration: underline;
+    padding-left: 15px;
 }
 .tittle-style {
     margin-top: 1%;
@@ -2635,5 +2636,8 @@ h5.small-title {
 }
 .strains-link:hover{
   color: black;
+}
+.history-pdf p{
+    padding-left: 15px;
 }
 /*--//responsive--*/
