@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="banner-bottom-w3l">
+    <div class="container">
+        <div class="title-div">
+            <h3 class="tittle"><span>C</span>ompanys</h3>
+            <div class="tittle-style"></div>
+            <h3 align="center">
+                {% for key, val in companys.items %}
+                    <a class="choices-link" href="#{{key}}"> {{key|upper}} </a>
+                {% endfor %}
+            </h3>
+        </div>
+        {% for key, values in companys.items %}
+        <h4 class="tittle" id="{{key}}"> {{key|upper}} </h4>
+        <div class="history">
+            {% for company in values %}
+                <div class="row">
+                    {{company.name}}
+                </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

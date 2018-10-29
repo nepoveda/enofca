@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('encyclopedia.urls', namespace="encyclopedia")),
+    url(r'^canna_cross/', include('canna_cross.urls', namespace="canna_cross")),
     url(r'^summernote/', include('django_summernote.urls')),
 ]
 if settings.DEBUG:

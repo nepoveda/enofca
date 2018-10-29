@@ -54,7 +54,8 @@ INSTALLED_APPS = [
     'address',
 
     'encyclopedia',
-    'orders'
+    'orders',
+    'canna_cross'
 ]
 
 MIDDLEWARE = [
