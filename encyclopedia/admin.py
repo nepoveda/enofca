@@ -33,7 +33,8 @@ class StrainPhotoInline(admin.StackedInline):
 class StrainModelAdmin(SummernoteModelAdmin):
     form = StrainForm
     inlines = [StrainPhotoInline,]
-    search_fields = ('name', 'webId')
+    list_display = ('name', 'webId', 'bank', 'link')
+    search_fields = ('name', 'webId', 'bank__name')
 
 class  CupForm(forms.ModelForm):
 
