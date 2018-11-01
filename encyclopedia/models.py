@@ -12,6 +12,7 @@ class Strain(models.Model):
     bank = models.ForeignKey('SeedBank', on_delete=models.SET_NULL, null=True, blank=True)
     cup = models.ForeignKey('Cup', on_delete=models.SET_NULL, null=True, blank=True)
     webId = models.SlugField(max_length=50, unique=True)
+    link = models.URLField(blank=True, null=True)
 
     #medical
     stress = models.PositiveSmallIntegerField(blank=True, default=0)

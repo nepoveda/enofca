@@ -9,14 +9,16 @@
 
     <div class="container">
         <div class="title-div">
-            <h3 class="tittle"> {{ object.name }} </h3>
+            {% if object.link %}
+            <a href="{{object.link}}" target="_blank"><h3 class="tittle"> {{ object.name }} </h3></a>
+            {% else %}
+                <h3 class="tittle"> {{ object.name }} </h3>
+            {% endif %}
             <div class="tittle-style" align="center"></div>
 
             {% if cups.count == 2 %}
                 <div class="logo-image col-sm-4" align="center">
-                    <a href="{% if object.bank.link %}{{object.bank.link}}{% else %}#{% endif %}" target="_blank">
                         <image src="{{object.bank.logo.url}}">
-                    </a>
                 </div>
                 {% for cup in cups %}
                 <div class="logo-image col-sm-4" align="center">
@@ -25,9 +27,7 @@
                 {% endfor %}
             {% elif cups.count == 1 %}
                 <div class="logo-image col-sm-8" align="center">
-                    <a href="{% if object.bank.link %}{{object.bank.link}}{% else %}#{% endif %}" target="_blank">
-                        <image src="{{object.bank.logo.url}}">
-                    </a>
+                    <image src="{{object.bank.logo.url}}">
                 </div>
                 {% for cup in cups %}
                 <div class="logo-image col-sm-4" align="center">
@@ -36,9 +36,7 @@
                 {% endfor %}
             {% elif object.bank.logo %}
             <div class="logo-image" align="center">
-                <a href="{% if object.bank.link %}{{object.bank.link}}{% else %}#{% endif %}" target="_blank">
-                    <image src="{{object.bank.logo.url}}">
-                </a>
+                        <image src="{{object.bank.logo.url}}">
             </div>
             {% endif %}
         </div>
