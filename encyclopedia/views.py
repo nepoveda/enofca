@@ -31,7 +31,7 @@ class StrainDeatailView(DetailView):
         context = super(StrainDeatailView, self).get_context_data(**kwargs)
         strain = self.get_object()
         context['photos'] = StrainPhoto.objects.filter(strain=strain)
-        context['cups'] = CupPhoto.objects.filter(cup=strain.cup)
+        context['cups'] = CupPhoto.objects.filter(cup__in=strain.cup.all())
         return context
 
 class HistoryListView(ListView):

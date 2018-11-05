@@ -10,7 +10,7 @@ class Strain(models.Model):
     name = models.CharField(u'název', max_length=100)
     info = models.TextField(u'informace', blank=True)
     bank = models.ForeignKey('SeedBank', on_delete=models.SET_NULL, null=True, blank=True)
-    cup = models.ForeignKey('Cup', on_delete=models.SET_NULL, null=True, blank=True)
+    cup = models.ManyToManyField('Cup', blank=True)
     webId = models.SlugField(max_length=50, unique=True)
     link = models.URLField(blank=True, null=True)
 
