@@ -16,28 +16,21 @@
             {% endif %}
             <div class="tittle-style" align="center"></div>
 
-            {% if cups.count == 2 %}
-                <div class="logo-image col-sm-4" align="center">
+            <div class="row" align="center">
+                <div class="logo-image" align="center">
                         <image src="{{object.bank.logo.url}}">
                 </div>
-                {% for cup in cups %}
-                <div class="logo-image col-sm-4" align="center">
-                        <image src="{{cup.logo.url}}">
-                </div>
-                {% endfor %}
-            {% elif cups.count == 1 %}
-                <div class="logo-image col-sm-8" align="center">
-                    <image src="{{object.bank.logo.url}}">
-                </div>
-                {% for cup in cups %}
-                <div class="logo-image col-sm-4" align="center">
-                        <image src="{{cup.logo.url}}">
-                </div>
-                {% endfor %}
-            {% elif object.bank.logo %}
-            <div class="logo-image" align="center">
-                        <image src="{{object.bank.logo.url}}">
             </div>
+            {% if cups.count >= 1 %}
+                <div class="row">
+                    <div class="cup-image" align="center">
+                    {% for cup in cups %}
+                        {% if cup.logo %}
+                            <image src="{{cup.logo.url}}">
+                        {% endif %}
+                    {% endfor %}
+                    </div>
+                 </div>
             {% endif %}
         </div>
     </div>
