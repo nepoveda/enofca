@@ -356,24 +356,25 @@ nav a:hover:after {
     width: 100%;
 }
 .agileits-banner-info h3 {
-    color: #fff;
+    color: #56d25b;
     font-size: 70px;
     letter-spacing: 4px;
     text-transform: uppercase;
 }
 .agileits-banner-info {
+    background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(72, 71, 71, 0.7), rgba(0,0,0,0));
     text-align: center;
     margin-top: 22em;
 }
 .agileits-banner-info p {
-    color: #fff;
+    color: #56d25b;
     letter-spacing: 3px;
     font-weight: 200;
     margin: 10px 0;
 }
 /*-- button --*/
 a.view {
-    color: #fff;
+    color: #56d25b;
     font-size: 16px;
     letter-spacing: 2px;
     display: inline-block;
