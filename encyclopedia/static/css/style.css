@@ -2644,4 +2644,7 @@ h5.small-title {
 .title-div a:focus{
     text-decoration: none;
 }
+.companys{
+    margin: 5% 0 5% 0;
+}
 /*--//responsive--*/

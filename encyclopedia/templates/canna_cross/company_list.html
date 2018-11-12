@@ -15,7 +15,7 @@
         {% for key, values in companys.items %}
         <h4 class="tittle" id="{{key}}"> {{key|upper}} </h4>
         <div class="history">
-            <div class="row">
+            <div class="row companys">
                 {% for company in values %}
                     <div class="col-sm-4 company-list">
                         {% if company.link and company.logo %}
