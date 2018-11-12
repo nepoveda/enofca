@@ -17,13 +17,15 @@
         <div class="history">
             <div class="row">
                 {% for company in values %}
-                    <div class="col-sm-4">
-                        {% if company.link %}
+                    <div class="col-sm-4 company-list">
+                        {% if company.link and company.logo %}
                             <a href="{{company.link}}" target="_blank">
-                                <img class="img-responsive" src="{{company.logo.url}}" alt="{{company.name}}">
+                                <img class="img-responsive company-image" src="{{company.logo.url}}" alt="{{company.name}}">
                             </a>
-                        {% else %}
+                        {% elif company.logo %}
                             <img class="img-responsive" src="{{company.logo.url}}" alt="{{company.name}}">
+                        {% else %}
+                            <h3> {{company.name}} </h3>
                         {% endif %}
                     </div>
                 {% endfor %}
