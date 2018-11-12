@@ -15,11 +15,19 @@
         {% for key, values in companys.items %}
         <h4 class="tittle" id="{{key}}"> {{key|upper}} </h4>
         <div class="history">
-            {% for company in values %}
-                <div class="row">
-                    {{company.name}}
-                </div>
-            {% endfor %}
+            <div class="row">
+                {% for company in values %}
+                    <div class="col-sm-4">
+                        {% if company.link %}
+                            <a href="{{company.link}}" target="_blank">
+                                <img class="img-responsive" src="{{company.logo.url}}" alt="{{company.name}}">
+                            </a>
+                        {% else %}
+                            <img class="img-responsive" src="{{company.logo.url}}" alt="{{company.name}}">
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
         </div>
         {% endfor %}
     </div>
