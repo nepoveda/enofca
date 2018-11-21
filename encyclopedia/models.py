@@ -11,7 +11,7 @@ class Strain(models.Model):
     info = models.TextField(u'informace', blank=True)
     bank = models.ForeignKey('SeedBank', on_delete=models.SET_NULL, null=True, blank=True)
     cup = models.ManyToManyField('Cup', blank=True)
-    cup_place = models.PositiveSmallIntegerField(blank=True, default=0)
+    cup_place = models.PositiveSmallIntegerField(blank=True, null=True, default=None)
     webId = models.SlugField(max_length=50, unique=True)
     link = models.URLField(blank=True, null=True)
 
