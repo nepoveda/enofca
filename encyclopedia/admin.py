@@ -17,10 +17,6 @@ class  StrainForm(forms.ModelForm):
                   'fatigue', 'inflammation', 'communicative', 'creative', 'energetic',  'euphoric',
                   'focused', 'happy', 'relaxed', 'uplifted', 'talkative', 'aroused', 'giggly',
                   'dry_eyes', 'dry_mouth', 'headache', 'paranoid', 'dizzy', 'anxious')
-        widgets = {
-            'name': forms.widgets.TextInput(attrs={'style': 'width:90%;'}),
-            'webId': forms.widgets.NumberInput()
-        }
 
 class StrainPhotoModelAdmin(admin.ModelAdmin):
     pass
@@ -41,6 +37,9 @@ class  CupForm(forms.ModelForm):
     class Meta:
         model = Cup
         fields = '__all__'
+        widgets = {
+            'info': forms.widgets.TextInput(attrs={'style': 'width:90%;'}),
+        }
 
 class CupPhotoModelAdmin(admin.ModelAdmin):
     pass
@@ -50,7 +49,7 @@ class CupPhotoInline(admin.StackedInline):
     max_num = 6
     extra = 6
 
-class CupModelAdmin(admin.ModelAdmin):
+class CupModelAdmin(SummernoteModelAdmin):
     form = CupForm
     inlines = [CupPhotoInline,]
 
