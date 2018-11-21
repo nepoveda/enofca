@@ -12,7 +12,7 @@ class  StrainForm(forms.ModelForm):
 
     class Meta:
         model = Strain
-        fields = ('name', 'webId', 'link', 'bank', 'cup', 'stress', 'insomnia', 'pain',
+        fields = ('name', 'webId', 'link', 'bank', 'cup', 'cup_place', 'stress', 'insomnia', 'pain',
                   'depression', 'headaches', 'lack_of_appetite', 'muscle_spams', 'nausea', 'cramps',
                   'fatigue', 'inflammation', 'communicative', 'creative', 'energetic',  'euphoric',
                   'focused', 'happy', 'relaxed', 'uplifted', 'talkative', 'aroused', 'giggly',
@@ -47,8 +47,8 @@ class CupPhotoModelAdmin(admin.ModelAdmin):
 
 class CupPhotoInline(admin.StackedInline):
     model = CupPhoto
-    max_num = 2
-    extra = 2
+    max_num = 6
+    extra = 6
 
 class CupModelAdmin(admin.ModelAdmin):
     form = CupForm

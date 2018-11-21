@@ -11,6 +11,7 @@ class Strain(models.Model):
     info = models.TextField(u'informace', blank=True)
     bank = models.ForeignKey('SeedBank', on_delete=models.SET_NULL, null=True, blank=True)
     cup = models.ManyToManyField('Cup', blank=True)
+    cup_place = models.PositiveSmallIntegerField(blank=True, default=0)
     webId = models.SlugField(max_length=50, unique=True)
     link = models.URLField(blank=True, null=True)
 
@@ -75,6 +76,7 @@ class Revadr(models.Model):
 
 class Cup(models.Model):
     name = models.CharField(max_length=100)
+    info = models.TextField(u'informace', blank=True)
 
     def __str__(self):
         return '{}'.format(self.name)
@@ -82,6 +84,7 @@ class Cup(models.Model):
 class CupPhoto(models.Model):
     cup = models.ForeignKey('Cup', on_delete=models.SET_NULL, null=True, blank=True)
     logo = models.ImageField(upload_to=cup_upload, blank=True, null=True)
+    for_place = models.PositiveSmallIntegerField(blank=True, default=0)
 
 def strain_directory_upload(instance, filename):
     return 'strains/{0}/{1}'.format(instance.strain.name, filename)
@@ -109,3 +112,4 @@ class History(models.Model):
 
     def __str__(self):
         return '{} - {}'.format(self.period, self.header)
+
