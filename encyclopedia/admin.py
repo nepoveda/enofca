@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django                  import forms
 from django.contrib          import admin
 from django_summernote.admin import SummernoteModelAdmin
-from encyclopedia.models                 import Strain, SeedBank, StrainPhoto, History, Cup, CupPhoto
+from encyclopedia.models                 import Strain, SeedBank, StrainPhoto, History, Cup, CupPhoto, Person
 
 
 # Register your models here.
@@ -60,7 +60,7 @@ class SeedBankModelAdmin(admin.ModelAdmin):
 class  HistoryForm(forms.ModelForm):
 
     class Meta:
-        model = Strain
+        model = History
         fields = '__all__'
         widgets = {
             'text': forms.widgets.TextInput(attrs={'style': 'width:90%;'}),
@@ -69,7 +69,20 @@ class  HistoryForm(forms.ModelForm):
 class HistoryModelAdmin(SummernoteModelAdmin):
     form = HistoryForm
 
+class  PersonForm(forms.ModelForm):
+
+    class Meta:
+        model = Person
+        fields = '__all__'
+        widgets = {
+            'text': forms.widgets.TextInput(attrs={'style': 'width:90%;'}),
+        }
+
+class PersonModelAdmin(SummernoteModelAdmin):
+    form = PersonForm
+
 admin.site.register(Strain, StrainModelAdmin)
 admin.site.register(SeedBank, SeedBankModelAdmin)
 admin.site.register(History, HistoryModelAdmin)
+admin.site.register(Person, PersonModelAdmin)
 admin.site.register(Cup, CupModelAdmin)

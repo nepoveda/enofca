@@ -113,3 +113,15 @@ class History(models.Model):
     def __str__(self):
         return '{} - {}'.format(self.period, self.header)
 
+def person_upload_to(instance, filename):
+    return 'person/{0}/{1}'.format(instance.name, filename)
+
+class Person(models.Model):
+    name = models.CharField(max_length=100)
+    text = models.TextField()
+    image = models.ImageField(upload_to=person_upload_to, blank=True, null=True)
+    pdf = models.FileField(upload_to=history_upload_to, blank=True, null=True)
+    standing = models.PositiveSmallIntegerField()
+
+    def __str__(self):
+        return '{}'.format(self.name)
