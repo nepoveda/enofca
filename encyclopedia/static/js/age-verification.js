@@ -30,9 +30,9 @@ av_showmodal = function() {
 	var modal_regret_wrapper = $('<div id="modal_regret_wrapper" class="content_wrapper" style="display:none;"></div>');
 
 	// Question Content
-	var content_heading = $('<h2>Are you 21 or older?</h2>');
+	var content_heading = $('<h2>Are you of legal age?</h2>');
 	var content_buttons = $('<a href="#nothing" class="av_btn av_go" rel="yes">Yes</a><a href="#nothing" class="av_btn av_no" rel="no">No</a>');
-	var content_text = $('<p>You must verify that you are 21 years of age or older to enter this site.</p>');
+	var content_text = $('<p>Due to the content of this website, you must be age of majority in your jurisdiction.</p>');
 
 	// Regret Content
 	var regret_heading = $('<h2>We\'re Sorry!</h2>');
