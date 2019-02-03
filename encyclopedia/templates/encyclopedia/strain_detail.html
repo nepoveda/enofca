@@ -18,7 +18,13 @@
 
             <div class="row" align="center">
                 <div class="logo-image" align="center">
+                    {% if object.link %}
+                        <a href="{{object.link}}" target="_blank">
+                            <image src="{{object.bank.logo.url}}"> <strong> <i class="fa fa-arrow-left"></i> Buy seeds here</strong>
+                        </a>
+                    {% else %}
                         <image src="{{object.bank.logo.url}}">
+                    {% endif %}
                 </div>
             </div>
             {% if cups.count >= 1 %}
