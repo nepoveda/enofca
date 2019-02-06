@@ -210,6 +210,40 @@ h3.agileinfo_sign span {
 }
 /*-- //model_signin --*/
 /*-- menu-navigation --*/
+.menu{
+    margin-bottom: 0;
+    border-radius: 0;
+}
+.brand{
+    padding: 5px 5px;
+    margin-top: 8px;
+    /* background-color: #56d25b; */
+}
+.brand img{
+    background-image: url('../images/enofca-logo.jpg');
+    height: 100%;
+    border-radius: 7px;
+}
+.navbar-inverse .navbar-nav > li > a{
+    color: white;
+    background-color: #56d25b;
+    border-radius: 8px;
+    font-family: 'Montserrat', serif;
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 8px;
+}
+}
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+.clearfix{
+    margin-top: 50px;
+}
 nav {
     background-color: rgba(0, 0, 0, 0.6);
     height: 100%;

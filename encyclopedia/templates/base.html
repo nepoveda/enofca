@@ -105,31 +105,57 @@ window.cookieconsent.initialise({
 </head>
 <body>
 
-<div class="main-agile">
+<div class="">
+    <div class="navbar navbar-inverse menu navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand brand" href="{% url 'encyclopedia:index' %}">
+                    <img class="nav-icon" alt="Brand"
+                    srcset="
+                    {% static 'images/enofca-logo.jpg' %}">
+                    <!-- ENofCA -->
+                </a>
+            </div>
+            <div class="collapse navbar-collapse collapse" id="main-menu">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{% url 'encyclopedia:strain-list' %}">Strains</a> </li>
+                    <li><a href="{% url 'encyclopedia:history' %}">Cannabis History</a> </li>
+                    <li><a href="{% url 'canna_cross:cross' %}">Canna Cross</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
 
 		  <!-- navigation -->
-			<div class="col-xs-2 menu">
+			<!-- <div class="col-xs-2 menu"> -->
 
-				<a href="" id="menuToggle">
+			<!-- 	<a href="" id="menuToggle"> -->
 
-					<span class="navClosed"></span>
+			<!-- 		<span class="navClosed"></span> -->
 
-				</a>
+			<!-- 	</a> -->
 
-				<nav>
+			<!-- 	<nav> -->
 
-                    <a href="{% url 'encyclopedia:index' %}#">Home</a>
+                    <!-- <a href="{% url 'encyclopedia:index' %}#">Home</a> -->
 
-                    <a href="{% url 'encyclopedia:strain-list' %}">Strains</a>
+                    <!-- <a href="{% url 'encyclopedia:strain-list' %}">Strains</a> -->
 
-                    <a href="{% url 'encyclopedia:history' %}">Cannabis History</a>
+                    <!-- <a href="{% url 'encyclopedia:history' %}">Cannabis History</a> -->
 
-                    <a href="{% url 'canna_cross:cross' %}">Canna Cross</a>
+                    <!-- <a href="{% url 'canna_cross:cross' %}">Canna Cross</a> -->
 
 
-				</nav>
+			<!-- 	</nav> -->
 
-		  </div>
+		  <!-- </div> -->
 
             {% block content %}
 
@@ -289,39 +315,11 @@ window.cookieconsent.initialise({
 
 	<script>
 
-		(function ($) {
 
 			// Menu Functions
 
-			$(document).ready(function () {
-
-				$('#menuToggle').click(function (e) {
-
-					var $parent = $(this).parent('.menu');
-
-					$parent.toggleClass("open");
-
-					var navState = $parent.hasClass('open') ? "hide" : "show";
-
-					$(this).attr("title", navState + " navigation");
-
-					// Set the timeout to the animation length in the CSS.
-
-					setTimeout(function () {
-
-						console.log("timeout set");
-
-						$('#menuToggle > span').toggleClass("navClosed").toggleClass("navOpen");
-
-					}, 200);
-
-					e.preventDefault();
-
-				});
-
-			});
-
-		})(jQuery);
+        $(document).ready(function () {
+        });
 
 	</script>
 
