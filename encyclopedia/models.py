@@ -115,7 +115,7 @@ class History(models.Model):
         return '{} - {}'.format(self.period, self.header)
 
 def person_upload_to(instance, filename):
-    return 'person/{0}/{1}'.format(instance.name, filename)
+    return 'person/{0}/{1}'.format(instance.id, filename)
 
 class Person(models.Model):
     name = models.CharField(max_length=100)

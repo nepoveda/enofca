@@ -645,6 +645,9 @@ h4.tittle {
     margin-top: 2%;
     margin-bottom: 1%;
 }
+h4.tittle::first-letter{
+    color: #56d25b;
+}
 h4.history {
     color: #232323;
     font-size: 38px;
