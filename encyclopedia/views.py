@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from django.views.generic.base import TemplateView
 
-from .models import Strain, StrainPhoto, History, HISTORY_CHOICES, CupPhoto
+from .models import Strain, StrainPhoto, History, HISTORY_CHOICES, CupPhoto, Cup
 import pydash
 
 # Create your views here.
@@ -41,3 +41,11 @@ class HistoryListView(ListView):
         historys = History.objects.order_by('standing')
         kwargs['historys'] = pydash.group_by(historys, lambda history: history.get_period_display())
         return super(HistoryListView, self).get_context_data(**kwargs)
+
+class CupListView(ListView):
+    model = Cup
+
+    # def get_context_data(self, **kwargs):
+    #     cups = Cup.objects.order_by('name')
+    #     kwargs['cups'] = pydash.group_by(cups, lambda cup: cup.name)
+    #     return super(CupListView, self).get_context_data(**kwargs)
