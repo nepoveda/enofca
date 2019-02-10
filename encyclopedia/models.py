@@ -60,6 +60,7 @@ class SeedBank(models.Model):
     logo = models.ImageField(upload_to=seed_bank_upload, blank=True, null=True)
     name = models.CharField(max_length=100)
     link = models.URLField(blank=True, null=True)
+    info = models.TextField(u'informace', blank=True)
 
     def __str__(self):
         return '{}'.format(self.name)

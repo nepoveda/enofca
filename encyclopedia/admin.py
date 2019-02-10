@@ -32,7 +32,7 @@ class StrainModelAdmin(SummernoteModelAdmin):
     list_display = ('name', 'webId', 'bank', 'link')
     search_fields = ('name', 'webId', 'bank__name')
 
-class  CupForm(forms.ModelForm):
+class CupForm(forms.ModelForm):
 
     class Meta:
         model = Cup
@@ -56,6 +56,9 @@ class CupModelAdmin(SummernoteModelAdmin):
 class SeedBankModelAdmin(admin.ModelAdmin):
     model = SeedBank
     search_fields = ('name',)
+    widgets = {
+        'info': forms.widgets.TextInput(attrs={'style': 'width:90%;'}),
+    }
 
 class  HistoryForm(forms.ModelForm):
 
