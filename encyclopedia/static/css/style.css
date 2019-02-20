@@ -232,7 +232,30 @@ h3.agileinfo_sign span {
     font-size: 14pt;
     font-weight: bold;
     margin: 8px;
+    text-align: center;
 }
+.menu-list {
+    background-color: #56d25b;
+    border-radius: 8px;
+    margin: 2% 0 0 auto;
+    line-height: 0;
+}
+.full-width{
+    min-width: 100%;
+}
+@media(max-width: 767px){
+    .full-width {
+        max-width: 80%;
+        min-width: 80%;
+        margin: 0 auto;
+    }
+}
+.menu-list-text{
+    color: white !important;
+    font-family: 'Montserrat', serif;
+    font-size: 12pt;
+    font-weight: bold !important;
+    text-align: center;
 }
 .fixed-top {
     position: fixed;
@@ -1627,6 +1650,9 @@ h5.small-title {
 @media(max-width: 1024px){
     .contact_grids_info p {
         font-size: 13px;
+    }
+    .full-width{
+        min-width: 80%;
     }
 }
 @media(max-width: 991px){

@@ -119,18 +119,18 @@ window.cookieconsent.initialise({
                     <img class="nav-icon" alt="Brand"
                     srcset="
                     {% static 'images/enofca-logo.jpg' %}">
-                    <!-- ENofCA -->
                 </a>
             </div>
-            <!-- <div class=""> -->
-            <!--     <ul class="nav navbar-nav navbar-left"> -->
-            <!--         <li><a class="navbar btn btn-success " href="{% url 'encyclopedia:strain-list' %}">Back</a></li> -->
-            <!--     </ul> -->
-            <!-- </div> -->
             <div class="collapse navbar-collapse collapse" id="main-menu">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{% url 'encyclopedia:strain-list' %}">Strains</a> </li>
-                    <li><a href="{% url 'encyclopedia:history' %}">Cannabis History</a> </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cannabis History<span class="caret"></span></a>
+                        <ul class="dropdown-menu navbar-inverse full-width">
+                            <li class="menu-list"><a class="menu-list-text" href="{% url 'encyclopedia:history' %}">Facts</a> </li>
+                            <li class="menu-list"><a class="menu-list-text" href="{% url 'encyclopedia:cups' %}">Cups</a> </li>
+                        </ul>
+                    </li>
                     <li><a href="{% url 'canna_cross:cross' %}">Canna Cross</a></li>
                 </ul>
             </div>
