@@ -10,7 +10,7 @@ class OrderForm(forms.ModelForm):
 
     class Meta:
         model = Order
-        fields = '__all__'
+        exclude = ['status']
 
     def clean_address(self):
         address = self.cleaned_data['address'].as_dict()

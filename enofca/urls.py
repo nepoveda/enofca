@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^', include('encyclopedia.urls', namespace="encyclopedia")),
     url(r'^canna_cross/', include('canna_cross.urls', namespace="canna_cross")),
     url(r'^summernote/', include('django_summernote.urls')),
+    url(r'^order/', include('orders.urls', namespace='orders')),
 ]
 if settings.DEBUG:
      urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
