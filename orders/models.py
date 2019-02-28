@@ -16,7 +16,6 @@ class Order(models.Model):
     email = models.EmailField()
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
-    address = AddressField()
     agree = models.BooleanField('I read and agree', default=False)
     status = models.PositiveSmallIntegerField(default=1, choices=STATUS_CHOICES)
 
