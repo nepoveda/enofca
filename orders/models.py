@@ -7,8 +7,9 @@ from django.core.mail import send_mail
 
 STATUS_CHOICES = (
     (1, 'new'),
-    (2, 'payed'),
-    (3, 'sended')
+    (2, 'confirmed'),
+    (4, 'payed'),
+    (5, 'sended')
 )
 
 class Order(models.Model):
