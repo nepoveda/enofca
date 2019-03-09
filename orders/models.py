@@ -18,9 +18,6 @@ class Order(models.Model):
     agree = models.BooleanField('I read and agree')
     status = models.PositiveSmallIntegerField(default=1, choices=STATUS_CHOICES)
 
-    # def save(self):
-    #     if self.id:
-    #         send_email('TEST subject', 'TEST TEST MESSAGE!!!!!! DANIG IS GOD!!!',
-    #                    'eshop@enofca.com', ['info@enofca.com', 'dan.nepejchal@gmail.com'])
-    #     super(Order, self).save()
+    def __str__(self):
+        return 'Order: {}'.format(self.pk)
 

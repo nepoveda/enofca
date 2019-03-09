@@ -10,6 +10,9 @@ class Client(models.Model):
     last_name = models.CharField(max_length=100)
     phone = models.CharField(max_length=50)
 
+    def __str__(self):
+        return 'Client: {}'.format(self.email)
+
 class Address(models.Model):
    street = models.CharField(max_length=100)
    street2 = models.CharField(max_length=100, null=True, blank=True)

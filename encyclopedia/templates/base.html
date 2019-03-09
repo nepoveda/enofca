@@ -132,6 +132,7 @@ window.cookieconsent.initialise({
                         </ul>
                     </li>
                     <li><a href="{% url 'canna_cross:cross' %}">Canna Cross</a></li>
+                    <li><a href="{% url 'orders:order' %}">Orders</a></li>
                     <li><a href="https://www.ebay.nl/itm/392251528452" target="_blank">Ebay for NL</a></li>
                 </ul>
             </div>
@@ -139,29 +140,6 @@ window.cookieconsent.initialise({
         </div>
     </div>
 
-		  <!-- navigation -->
-			<!-- <div class="col-xs-2 menu"> -->
-
-			<!-- 	<a href="" id="menuToggle"> -->
-
-			<!-- 		<span class="navClosed"></span> -->
-
-			<!-- 	</a> -->
-
-			<!-- 	<nav> -->
-
-                    <!-- <a href="{% url 'encyclopedia:index' %}#">Home</a> -->
-
-                    <!-- <a href="{% url 'encyclopedia:strain-list' %}">Strains</a> -->
-
-                    <!-- <a href="{% url 'encyclopedia:history' %}">Cannabis History</a> -->
-
-                    <!-- <a href="{% url 'canna_cross:cross' %}">Canna Cross</a> -->
-
-
-			<!-- 	</nav> -->
-
-		  <!-- </div> -->
 
             {% block content %}
 
@@ -224,6 +202,11 @@ window.cookieconsent.initialise({
 
 					</li>
 
+					<li>
+
+                        <a class="scroll" href="{% static 'documents/Announcement.pdf' %}">Announcement</a>
+
+					</li>
 				</ul>
 
 			</div>
