@@ -11,19 +11,71 @@
         <div class="title-div">
             <h3 class="tittle"> Order </h3>
         </div>
-        <div class="row">
+        <div class="">
+            <div class="history">
+                    <div class="row">
+                        <div class="history" align="center">
+                            <p>Fill in the information below.....<br>
+                                Payment is possible via <b>PayPal</b> only.<br>
+                                Shipping fee will be calculated depending on your <a href="{% static 'documents/postal-prices.pdf' %}">location.</a> <br>
+                                You will be informed as soon as possible via email. <br>
+                            </p>
+                        </div>
+                    </div>
+                    <hr>
+            </div>
             <form method="post">
                 {% csrf_token %}
-                {% for field in form %}
-                    <div class="col-sm-6">
+                {% for field in forms.clientForm %}
+                <div class="row">
+                    <div class="col-sm-6" align="right">
                         {{field.errors}}
                         {{field.label_tag}}
                     </div>
                     <div class="col-sm-6">
                         {{field}}
                     </div>
+                </div>
                 {% endfor %}
-                <input type="submit" value="Send" />
+                {% for field in forms.addressForm %}
+                <div class="row">
+                    <div class="col-sm-6" align="right">
+                        {{field.errors}}
+                        {{field.label_tag}}
+                    </div>
+                    <div class="col-sm-6">
+                        {{field}}
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="row">
+                    <div class="col-sm-6" align="right">
+                        {{forms.orderForm.quantity.errors}}
+                        {{forms.orderForm.quantity.label_tag}}
+                        <span> (price for 1 copy is 69.9 EUR + shippipng)</span>
+                    </div>
+                    <div class="col-sm-6">
+                        {{forms.orderForm.quantity}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6" align="right">
+                        {{forms.orderForm.agree.label_tag}}
+                        <span>
+                            <a href="{% static 'documents/ENOFCA-terms-and-conditions.pdf' %}">Terms of privaci and policy</a>
+                        </span>
+                    </div>
+                    <div class="col-sm-6">
+                        {{forms.orderForm.agree}}
+                        {{forms.orderForm.agree.errors}}
+                    </div>
+                </div>
+                {{ forms.orderForm.non_field_errors }}
+                <div class="row">
+                    <div class="col-sm-7" align="right">
+                        <input type="submit" value="Send" />
+                    </div>
+                </div>
             </form>
         </div>
     </div>

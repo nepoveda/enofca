@@ -13,14 +13,14 @@ STATUS_CHOICES = (
 
 class Order(models.Model):
     quantity = models.PositiveSmallIntegerField(default=1)
-    email = models.EmailField()
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    agree = models.BooleanField('I read and agree', default=False)
+    client = models.ForeignKey('clients.Client', on_delete=models.PROTECT)
+    address = models.ForeignKey('clients.Address', on_delete=models.PROTECT)
+    agree = models.BooleanField('I read and agree')
     status = models.PositiveSmallIntegerField(default=1, choices=STATUS_CHOICES)
 
-    def save(self):
-        if self.id:
-            send_email('TEST subject', 'TEST TEST MESSAGE!!!!!! DANIG IS GOD!!!',
-                       'eshop@enofca.com', ['info@enofca.com', 'dan.nepejchal@gmail.com'])
-        super(Order, self).save()
+    # def save(self):
+    #     if self.id:
+    #         send_email('TEST subject', 'TEST TEST MESSAGE!!!!!! DANIG IS GOD!!!',
+    #                    'eshop@enofca.com', ['info@enofca.com', 'dan.nepejchal@gmail.com'])
+    #     super(Order, self).save()
+

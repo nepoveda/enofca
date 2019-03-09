@@ -10,3 +10,5 @@ django-cleanup
 django-address
 django-multi-captcha-admin
 django-recaptcha2
+django-phonenumber-field
+phonenumbers

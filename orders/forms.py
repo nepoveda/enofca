@@ -8,5 +8,12 @@ class OrderForm(forms.ModelForm):
 
     class Meta:
         model = Order
-        exclude = ['status']
+        exclude = ['status', 'client', 'address']
+
+    def clean_agree(self):
+        agree = self.cleaned_data['agree']
+        if not agree:
+            raise ValidationError('This field is required')
+
+        return agree
 

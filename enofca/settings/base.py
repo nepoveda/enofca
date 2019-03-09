@@ -55,7 +55,8 @@ INSTALLED_APPS = [
 
     'encyclopedia',
     'orders',
-    'canna_cross'
+    'canna_cross',
+    'clients'
 ]
 
 MIDDLEWARE = [
