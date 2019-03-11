@@ -72,6 +72,15 @@ def send_order_email(order_id, to_email):
     from_email = 'eshop@enofca.com'
     mail.send_mail(subject, plain_message, from_email, [to_email], html_message=html_template)
 
+def send_info_email(order, client, address):
+    subject = 'Order form ENOFCA ({})'.format(order.id)
+    html_template = render_to_string('order_info_mail.html', {'order': order,
+                                                         'client': client,
+                                                         'address': address})
+    plain_message = strip_tags(html_template)
+    from_email = 'eshop@enofca.com'
+    mail.send_mail(subject, plain_message, from_email, ['info@enofca.com'], html_message=html_template)
+
 class OrderView(MultipleFormsView):
     template_name = 'order.html'
     success_url = reverse_lazy('orders:success')
@@ -102,7 +111,7 @@ class OrderView(MultipleFormsView):
             )
             order.save()
             send_order_email(order.id, client.email)
-            send_order_email(order.id, 'info@enofca.com')
+            send_info_email(order, client, address)
             return HttpResponseRedirect(reverse('orders:success'))
         return render(request, self.template_name, {
             'forms': forms
