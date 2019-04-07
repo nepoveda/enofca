@@ -42,6 +42,9 @@ class HistoryListView(ListView):
         kwargs['historys'] = pydash.group_by(historys, lambda history: history.get_period_display())
         return super(HistoryListView, self).get_context_data(**kwargs)
 
+class HistoryDetailView(DetailView):
+    model = History
+
 class CupListView(ListView):
     model = Cup
 

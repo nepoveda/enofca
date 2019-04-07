@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="banner-bottom-w3l">
+    <div class="container">
+        <div class="title-div">
+            <h3 class="tittle"> <span>C</span>annabis history</h3>
+            <div class="tittle-style"></div>
+
+           <h3 align="center">
+               {% for key, val in historys.items %}
+                       <a class="choices-link" href="#{{key}}"> {{key|upper}} </a>
+               {% endfor %}
+           </h3>
+
+        </div>
+            <h4 class="tittle" id="{{key}}"> {{key|upper}} </h4>
+            <div class="history">
+                    <div class="row">
+                        <h5 class="tittle"> {{history.header|upper}} </h5>
+                        <div class="history col-sm-8"> {{history.text|safe}} </div>
+                        {% if history.image %}
+                            <div class="col-sm-4 history-image">
+                                <a href="{{history.image.url}}" data-lightbox="example-set">
+                                    <img src="{{history.image.url}}" alt="{{history.header}}" class="img-responsive">
+                                 </a>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <hr>
+                    {% if history.pdf %}
+                        <div class="row history-pdf">
+                            <p>
+                                <b>Download:</b>
+                                <a href="{{history.pdf.url}}">
+                                    PDF
+                                </a>
+                            </p>
+                        </div>
+                        <hr>
+                    {% endif %}
+            </div>
+    </div>
+</div>
+{% endblock %}
