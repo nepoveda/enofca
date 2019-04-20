@@ -48,7 +48,5 @@ class HistoryDetailView(DetailView):
 class CupListView(ListView):
     model = Cup
 
-    # def get_context_data(self, **kwargs):
-    #     cups = Cup.objects.order_by('name')
-    #     kwargs['cups'] = pydash.group_by(cups, lambda cup: cup.name)
-    #     return super(CupListView, self).get_context_data(**kwargs)
+class CupDetailView(DetailView):
+    model = Cup

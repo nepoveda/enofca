@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="banner-bottom-w3l">
+    <div class="container">
+        <div class="title-div">
+            <h3 class="tittle">Cup history </h3>
+            <div class="tittle-style"></div>
+
+           <h3 align="center">
+               {{cup.name|upper}}
+           </h3>
+
+        </div>
+            <h4 class="tittle" id="{{key}}"> {{key|upper}} </h4>
+            <div class="history">
+                    <div class="row">
+                        <div class="history"> {{cup.info|safe}} </div>
+                    </div>
+                    <hr>
+            </div>
+    </div>
+</div>
+{% endblock %}

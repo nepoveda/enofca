@@ -7,23 +7,16 @@
             <h3 class="tittle">Cups history</h3>
             <div class="tittle-style"></div>
 
-            {% comment %}
-           <h3 align="center">
-               {% for key, val in cups.items %}
-                       <a class="choices-link" href="#{{key}}"> {{key|upper}} </a>
-               {% endfor %}
-           </h3>
-            {% endcomment %}
-
         </div>
             {% for cup in object_list %}
-            <h4 class="tittle" id="{{cup.id}}"> {{cup.name}} </h4>
-            <div class="history">
-                    <div class="row">
-                        <div class="history"> {{cup.info|safe}} </div>
-                    </div>
-                    <hr>
-            </div>
+            <h4 class="tittle"> <a class="strains-link" href="{% url 'encyclopedia:cup_detail' pk=cup.pk %}"> {{cup.name|upper}} </a></h4>
+
+            <!-- <div class="history"> -->
+            <!--         <div class="row"> -->
+            <!--             <div class="history"> {{cup.info|safe}} </div> -->
+            <!--         </div> -->
+            <!--         <hr> -->
+            <!-- </div> -->
             {% endfor %}
     </div>
 </div>
