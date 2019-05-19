@@ -53,12 +53,18 @@ class CupModelAdmin(SummernoteModelAdmin):
     form = CupForm
     inlines = [CupPhotoInline,]
 
-class SeedBankModelAdmin(admin.ModelAdmin):
-    model = SeedBank
+class SeedBankForm(forms.ModelForm):
+
+    class Meta:
+        model = SeedBank
+        fields = '__all__'
+        widgets = {
+            'info': forms.widgets.TextInput(attrs={'style': 'width:90%;'}),
+        }
+
+class SeedBankModelAdmin(SummernoteModelAdmin):
     search_fields = ('name',)
-    widgets = {
-        'info': forms.widgets.TextInput(attrs={'style': 'width:90%;'}),
-    }
+    form = SeedBankForm
 
 class  HistoryForm(forms.ModelForm):
 
