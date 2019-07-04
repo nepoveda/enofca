@@ -19,13 +19,9 @@
 
             <div class="row" align="center">
                 <div class="logo-image" align="center">
-                    {% if object.link %}
-                        <a href="{{object.link}}" target="_blank">
-                            <image src="{{object.bank.logo.url}}">
-                        </a>
-                    {% else %}
+                    <a href="{% url 'encyclopedia:seed_bank' pk=object.bank.pk %}" >
                         <image src="{{object.bank.logo.url}}">
-                    {% endif %}
+                    </a>
                 </div>
             </div>
             {% if cups.count >= 1 %}
@@ -33,7 +29,9 @@
                     <div class="cup-image" align="center">
                     {% for cup in cups %}
                         {% if cup.logo %}
-                            <image src="{{cup.logo.url}}">
+                        <a href="{% url 'encyclopedia:cup_detail' pk=cup.pk %}">
+                            <image src="{{cup.logo.url}}" alt="cup photo">
+                        </a>
                         {% endif %}
                     {% endfor %}
                     </div>

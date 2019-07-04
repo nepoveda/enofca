@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from django.views.generic.base import TemplateView
 
-from .models import Strain, StrainPhoto, History, HISTORY_CHOICES, CupPhoto, Cup
+from .models import Strain, StrainPhoto, History, HISTORY_CHOICES, CupPhoto, Cup, SeedBank
 import pydash
 
 # Create your views here.
@@ -50,3 +50,9 @@ class CupListView(ListView):
 
 class CupDetailView(DetailView):
     model = Cup
+
+class SeedBankListView(ListView):
+    model = SeedBank
+
+class SeedBankDetailView(DetailView):
+    model = SeedBank
