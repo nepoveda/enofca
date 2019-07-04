@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="banner-bottom-w3l">
+    <div class="container">
+        <div class="title-div">
+            <h3 class="tittle">{{seedbank.name|upper}}</h3>
+            <div class="tittle-style"></div>
+
+        </div>
+            <div class="row" align="center">
+                <div class="logo-image" align="center">
+                    {% if seedbank.link %}
+                        <a href="{{seedbank.link}}" target="_blank">
+                            <image src="{{seedbank.logo.url}}">
+                        </a>
+                    {% else %}
+                        <image src="{{seedbank.logo.url}}">
+                    {% endif %}
+                </div>
+            </div>
+            <div class="history">
+                    <div class="row">
+                        <div class="history"> {{seedbank.info|safe}} </div>
+                    </div>
+                    <hr>
+            </div>
+    </div>
+</div>
+{% endblock %}
