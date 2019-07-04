@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'strains/(?P<webId>[0-9]+)/$', views.StrainDeatailView.as_view(), name="strain"),
     url(r'history/(?P<pk>[0-9]+)/$', views.HistoryDetailView.as_view(), name="history_detail"),
     url(r'cup/(?P<pk>[0-9]+)/$', views.CupDetailView.as_view(), name="cup_detail"),
-    url(r'seed-bank/(?P<pk>[0-9]+)/$', views.SeedBankDetailView.as_view(), name="seed_bank")
+    url(r'seed-bank/(?P<pk>[0-9]+)/$', views.SeedBankDetailView.as_view(), name="seed_bank"),
+    url(r'seed-banks/$', views.SeedBankListView.as_view(), name="seed_banks")
 ]
 

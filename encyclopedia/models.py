@@ -110,7 +110,6 @@ class History(models.Model):
     image = models.ImageField(upload_to=history_upload_to, blank=True, null=True)
     pdf = models.FileField(upload_to=history_upload_to, blank=True, null=True)
     standing = models.PositiveSmallIntegerField()
-    short_info = models.TextField()
 
     def __str__(self):
         return '{} - {}'.format(self.period, self.header)

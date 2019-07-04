@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="banner-bottom-w3l">
+    <div class="container">
+        <div class="title-div">
+            <h3 class="tittle">Seed banks</h3>
+            <div class="tittle-style"></div>
+
+        </div>
+            {% for cup in object_list %}
+            <h4 class="tittle"> <a class="strains-link" href="{% url 'encyclopedia:seed_bank' pk=cup.pk %}"> {{cup.name|upper}} </a></h4>
+
+            <!-- <div class="history"> -->
+            <!--         <div class="row"> -->
+            <!--             <div class="history"> {{cup.info|safe}} </div> -->
+            <!--         </div> -->
+            <!--         <hr> -->
+            <!-- </div> -->
+            {% endfor %}
+    </div>
+</div>
+{% endblock %}
