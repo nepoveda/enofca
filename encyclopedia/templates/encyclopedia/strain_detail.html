@@ -29,7 +29,7 @@
                     <div class="cup-image" align="center">
                     {% for cup in cups %}
                         {% if cup.logo %}
-                        <a href="{% url 'encyclopedia:cup_detail' pk=cup.pk %}">
+                        <a href="{% url 'encyclopedia:cup_detail' pk=cup.cup.pk %}">
                             <image src="{{cup.logo.url}}" alt="cup photo">
                         </a>
                         {% endif %}
