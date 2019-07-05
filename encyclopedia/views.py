@@ -48,11 +48,17 @@ class HistoryDetailView(DetailView):
 class CupListView(ListView):
     model = Cup
 
+    def get_queryset(self):
+        return Cup.objects.all().order_by('name')
+
 class CupDetailView(DetailView):
     model = Cup
 
 class SeedBankListView(ListView):
     model = SeedBank
+
+    def get_queryset(self):
+        return SeedBank.objects.all().order_by('name')
 
 class SeedBankDetailView(DetailView):
     model = SeedBank
