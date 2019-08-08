@@ -25,13 +25,13 @@ class Company(models.Model):
     continent = models.CharField(max_length=10, choices=CONTINENT_CHOICES)
 
     paper = models.BooleanField()
-    oil = models.BooleanField()
-    fuel = models.BooleanField()
+    cbd_oil = models.BooleanField()
+    homes = models.BooleanField()
     clothing = models.BooleanField()
-    medicine = models.BooleanField()
+    medicine_food = models.BooleanField()
     science = models.BooleanField()
-    food = models.BooleanField()
-    buildings = models.BooleanField()
+    shops = models.BooleanField()
+    info_magazine = models.BooleanField()
 
     def __str__(self):
         return '{}'.format(self.name)
