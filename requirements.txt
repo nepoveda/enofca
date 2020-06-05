@@ -4,22 +4,24 @@
 #
 #    pip-compile --output-file requirements.txt requirements.in
 #
+babel==2.8.0              # via django-phonenumber-field
 certifi==2018.10.15       # via requests
 chardet==3.0.4            # via requests
-django-address==0.2.0
-django-bootstrap3==11.0.0
-django-cleanup==2.1.0
-django-extensions==2.1.2
-django-multi-captcha-admin==1.0.0
-django-recaptcha2==1.3.1
-django-summernote==0.8.10.0
-django==1.11.15
+django-address==0.2.0     # via -r requirements.in
+django-bootstrap3==11.0.0  # via -r requirements.in
+django-cleanup==2.1.0     # via -r requirements.in
+django-extensions==2.1.2  # via -r requirements.in
+django-multi-captcha-admin==1.0.0  # via -r requirements.in
+django-phonenumber-field==4.0.0  # via -r requirements.in
+django-recaptcha2==1.3.1  # via -r requirements.in
+django-summernote==0.8.10.0  # via -r requirements.in
+django==1.11.29           # via -r requirements.in, django-multi-captcha-admin, django-phonenumber-field, django-summernote
 idna==2.7                 # via requests
-pillow==5.2.0
-psycopg2==2.7.5
-pydash==4.7.3
-pytz==2018.5
+phonenumbers==8.12.5      # via -r requirements.in
+pillow==5.2.0             # via -r requirements.in
+psycopg2==2.7.5           # via -r requirements.in
+pydash==4.7.3             # via -r requirements.in
+pytz==2018.5              # via -r requirements.in, babel, django
 requests==2.20.0          # via django-recaptcha2
 six==1.11.0               # via django-extensions
-typing==3.6.6             # via django-extensions
 urllib3==1.24             # via requests
